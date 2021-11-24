@@ -93,8 +93,8 @@ Running software
 ~~~~~~~~~~~~~~~~
 In order to run software on BioKEM's Blanca server:
    - Request access to Blanca through `Research Computing <https://rcamp.rc.colorado.edu/accounts/account-request/create/organization>`_
-   - Request a Petalibrary allocation (~20TB/active project) by emailing
-   rc-help@colorado.edu **Make sure to have them create a 'biokem-deposit'
+   - Request a Petalibrary allocation (~20TB/active project) by emailing \
+   rc-help@colorado.edu **Make sure to have them create a 'biokem-deposit' \
    folder for your lab to deposit Krios images into**
    - Purchase an SBGrid license for your lab
        - Labs without an SBgrid license will have minimal access to software.
