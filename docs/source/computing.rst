@@ -16,6 +16,13 @@ Getting started section. In brief, you will host your dataset on Petalibrary,
 process it on GPUs within the Blanca computing cluster using software managed
 through SBGrid.
 
+.. toctree::
+   :maxdepth: 2
+   
+   collecting/otf_motion_correction
+   collecting/general_users
+   collecting/ccet_users
+
 Getting started
 ---------------
 
