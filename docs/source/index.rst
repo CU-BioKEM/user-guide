@@ -18,5 +18,5 @@ Camera. This user guide will provide step by step instructions for:
    storing
 
 For addition help please contact Chuck Moe (charles.moe@colorado.edu) for
-technical or data storage questions and rc-help@colorado.edu for computing 
+technical or data storage questions and rc-help@colorado.edu for cluster computing 
 questions.
