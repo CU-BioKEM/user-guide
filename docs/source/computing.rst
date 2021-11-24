@@ -69,7 +69,7 @@ be easier for the community to troubleshoot than working in individual labs.
 SBGrid
 ~~~~~~
 To manage all of the software necessary for processing EM data, we are using a
-software manager called `SBGrid <https://sbgrid.org>`_. This service allows us to 
+software manager called `SBGrid <https://sbgrid.org>`_. This service allows us to
 maintain multiple versions of software, as well as easily install and update new
 software. General members of the EM community may use a basic set of software
 under the facility's license including:
@@ -94,7 +94,7 @@ Running software
 In order to run software on BioKEM's Blanca server:
    - Request access to Blanca through `Research Computing <https://rcamp.rc.colorado.edu/accounts/account-request/create/organization>`_
    - Request a Petalibrary allocation (~20TB/active project) by emailing rc-help@colorado.edu
-     - Make sure to have them create a 'biokem-deposit' folder for your lab to deposit Krios images into
+       - Make sure to have them create a 'biokem-deposit' folder for your lab to deposit Krios images into
    -  Purchase an SBGrid license for your lab
-      - Labs without an SBgrid license will have minimal access to SBGrid softwares.
-      - Labs with their own SBgrid license will be able to access the full stack of software, without limitation.
+       - Labs without an SBgrid license will have minimal access to SBGrid softwares.
+       - Labs with their own SBgrid license will be able to access the full stack of software, without limitation.
