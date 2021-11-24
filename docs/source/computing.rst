@@ -19,9 +19,9 @@ through SBGrid.
 .. toctree::
    :maxdepth: 2
    
-   collecting/otf_motion_correction
-   collecting/general_users
-   collecting/ccet_users
+   computing/otf_motion_correction
+   computing/general_users
+   computing/ccet_users
 
 Getting started
 ---------------
