@@ -17,6 +17,7 @@ Camera. This user guide will provide step by step instructions for:
    computing
    storing
 
-For addition help please contact Chuck Moe (charles.moe@colorado.edu) for
-technical or data storage questions and rc-help@colorado.edu for cluster computing 
-questions.
+For addition technical help please contact Chuck Moe (charles.moe@colorado.edu). For 
+additional help with the Blanca computing cluster or Petalibrary refer to 
+`RC's doccumentation page <https://curc.readthedocs.io/en/latest/index.html>`_,
+email rc-help@colorado.edu if additional help is needed.
