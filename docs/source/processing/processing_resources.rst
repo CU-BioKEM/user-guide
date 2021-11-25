@@ -60,7 +60,7 @@ CUmulus
 --------
 In addition to the Blanca computing cluster, users from CU also have the option
 to access
-`CUmulus <https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html>`.
+`CUmulus <https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html>`_.
 CUmulus is CU's cloud computing service that allows users to create virtual
 machines to fill specific roles that Blanca cannot perform for security or job
 limitation reasons. Two specific uses of this resource are: hosting a persistent
