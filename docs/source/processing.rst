@@ -1,5 +1,5 @@
-Computing on blanca-biokem
-==========================
+Processing data
+===============
 
 The BioKEM computing environment consists of three main parts: Petalibrary, 
 Blanca, and SBGrid. In order to use the cluster, you will need to gain access to 
