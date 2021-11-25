@@ -22,5 +22,5 @@ Camera. You are likely looking for :doc:processing/how_to.
 
 For addition technical help please contact Chuck Moe (charles.moe@colorado.edu). For 
 additional help with the Blanca computing cluster or Petalibrary refer to 
-`RC's doccumentation page <https://curc.readthedocs.io/en/latest/index.html>`_,
-email rc-help@colorado.edu if additional help is needed.
+`RC's doccumentation page <https://curc.readthedocs.io/en/latest/index.html>`_.
+Email rc-help@colorado.edu if additional help is needed.
