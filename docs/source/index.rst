@@ -8,7 +8,7 @@ Welcome to BioKEM's documentation!
 The University of Colorado Boulder Biochemistry Department's Krios Electron
 Microscopy facility (BioKEM) offers single particle cryo-EM and cryo-ET of
 plunge-frozen samples using a Titan Krios G3i with a Gatan K3 Direct Detection
-Camera. This user guide will provide step by step instructions for:
+Camera. You are likely looking for :doc:processing/how_to.
 
 .. toctree::
    :maxdepth: 2
@@ -17,6 +17,7 @@ Camera. This user guide will provide step by step instructions for:
    collecting
    processing
    storing
+   getting
    external_links
 
 For addition technical help please contact Chuck Moe (charles.moe@colorado.edu). For 
