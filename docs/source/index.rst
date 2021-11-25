@@ -13,6 +13,7 @@ Camera. This user guide will provide step by step instructions for:
 .. toctree::
    :maxdepth: 2
 
+   faqs
    collecting
    computing
    storing

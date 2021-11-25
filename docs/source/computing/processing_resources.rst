@@ -1,5 +1,16 @@
-General users
-=============
+Processing resources
+====================
+This section will provide descriptions of the systems associate with BioKEM, for
+technical guides on how to use the systems, see :doc:/computing/how_to.
+
+    - :ref:`Petalibrary`
+    - :ref:`Blanca-biokem`
+    - :ref:`Blanca-viz`
+    - :ref:`CUmulus`
+    - :ref:`SLURM`
+    - :ref:`SBGrid`
+
+.. _Petalibrary:
 
 Petalibrary
 -----------
@@ -17,8 +28,10 @@ email rc-help@colorado.edu to request and allocation. We recommend requesting an
 allocation of about ~20TB/actively processing dataset. This service could also
 be a good long term storage option for already processed datasets.
 
-Blanca
-------
+.. _Blanca-biokem:
+
+Blanca-biokem
+-------------
 `Blanca <https://www.colorado.edu/rc/resources/blanca>`_ is RC's condo computing
 cluster. This cluster allows users to purchase their own computing nodes that RC
 will then house, setup, and manage. Users have priority on the nodes they own,
@@ -28,8 +41,33 @@ and the other for users of the facility to process EM data. The physical space
 we are allotted can house up to 10 processing nodes in addition to the on the
 fly node. These nodes are purchased by individual labs, but are then shared by
 all members of the BioKEM facility. Each node will consist of a number of GPUs
-(typically 4) and CPUs, as well as RAM to run jobs. All jobs ran in the cluster
-are submitted by a workload manager called SLURM.
+(typically 4) and CPUs. All jobs ran in the cluster are submitted by a workload
+manager called :ref:`SLURM`.
+
+.. _Blanca-viz:
+
+Blanca-viz
+----------
+In addition to the processing, login and compile nodes on Blanca, there are two
+GPU-accelerated visualization nodes that allow users to run graphical user
+interfaces, like ChimeraX. This is done through a web-based portal called
+`EngineFrame <https://www.colorado.edu/rc/resources/enginframe>`_ and is how
+even command line based computing should be done on Blanca.
+
+.. _CUmulus:
+
+CUmulus
+--------
+In addition to the Blanca computing cluster, users from CU also have the option
+to access
+`CUmulus <https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html>`.
+CUmulus is CU's cloud computing service that allows users to create virtual
+machines to fill specific roles that Blanca cannot perform for security or job
+limitation reasons. Two specific uses of this resource are: hosting a persistent
+job such as a CryoSPARC master instance or setting up a webpage. Clonable VMs
+to accomplish these tasks will be available to BioKEM users soon.
+
+.. _SLURM:
 
 SLURM
 -----
@@ -47,6 +85,8 @@ SLURM are:
 All of these will bring the cost of high performance computing per lab down
 drastically, while working within a consistent compute environment that should
 be easier for the community to troubleshoot than working in individual labs.
+
+.. _SBGrid:
 
 SBGrid
 ------
@@ -70,14 +110,3 @@ applications.
 
 Commercial users are limited to a few preprocessing applications without an
 additional license.
-
-Running software
-----------------
-In order to run software on BioKEM's Blanca server:
-   - Request access to Blanca through `Research Computing <https://rcamp.rc.colorado.edu/accounts/account-request/create/organization>`_
-   - Request a Petalibrary allocation (~20TB/active project) by emailing rc-help@colorado.edu **Make sure to have them create a 'biokem-deposit' folder for your lab to deposit Krios images into**
-   - Purchase an SBGrid license for your lab
-
-     - Labs without an SBgrid license will have minimal access to software.
-     - Labs with their own SBgrid license will be able to access the full stack of software, without limitation.
-
