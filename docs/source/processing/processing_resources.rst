@@ -14,7 +14,7 @@ technical guides on how to use the systems, see :doc:processing/how_to.
 
 Petalibrary
 -----------
-`Petalibrary <https://www.colorado.edu/rc/resources/petalibrary>`_ is CU's
+`Petalibrary <https://www.colorado.edu/rc/resources/petalibrary>`__ is CU's
 Research Computing (RC) files storage system. This service can be used to safely
 and securely store 100's of TBs of data for a modest cost. This system is well
 backed up, so you don't have to worry about losing valuable data. The other
@@ -32,7 +32,7 @@ be a good long term storage option for already processed datasets.
 
 Blanca-biokem
 -------------
-`Blanca <https://www.colorado.edu/rc/resources/blanca>`_ is RC's condo computing
+`Blanca <https://www.colorado.edu/rc/resources/blanca>`__ is RC's condo computing
 cluster. This cluster allows users to purchase their own computing nodes that RC
 will then house, setup, and manage. Users have priority on the nodes they own,
 but have access to use other users nodes when they are available. The BioKEM
@@ -51,7 +51,7 @@ Blanca-viz
 In addition to the processing, login and compile nodes on Blanca, there are two
 GPU-accelerated visualization nodes that allow users to run graphical user
 interfaces, like ChimeraX. This is done through a web-based portal called
-`EnginFrame <https://www.colorado.edu/rc/resources/enginframe>`_ and is how
+`EnginFrame <https://www.colorado.edu/rc/resources/enginframe>`__ and is how
 even command line based computing should be done on Blanca.
 
 .. _CUmulus:
@@ -60,7 +60,7 @@ CUmulus
 --------
 In addition to the Blanca computing cluster, users from CU also have the option
 to access
-`CUmulus <https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html>`_.
+`CUmulus <https://curc.readthedocs.io/en/latest/hybrid-cloud/cumulus.html>`__.
 CUmulus is CU's cloud computing service that allows users to create virtual
 machines to fill specific roles that Blanca cannot perform for security or job
 limitation reasons. Two specific uses of this resource are: hosting a persistent
@@ -71,7 +71,7 @@ to accomplish these tasks will be available to BioKEM users soon.
 
 SLURM
 -----
-`SLURM <https://slurm.schedmd.com>`_ is the management system many computing
+`SLURM <https://slurm.schedmd.com>`__ is the management system many computing
 clusters, including Blanca use to run jobs. It allows multiple users to use the
 same computing resources by distributing jobs across resources and scheduling
 jobs to start when resources become available. The main benefits to us of using
@@ -91,7 +91,7 @@ be easier for the community to troubleshoot than working in individual labs.
 SBGrid
 ------
 To manage all of the software necessary for processing EM data, we are using a
-software manager called `SBGrid <https://sbgrid.org>`_. This service allows us to
+software manager called `SBGrid <https://sbgrid.org>`__. This service allows us to
 maintain multiple versions of software, as well as easily install and update new
 software. General members of the EM community may use a basic set of software
 under the facility's license including:
