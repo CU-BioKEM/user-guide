@@ -1,7 +1,7 @@
 Processing resources
 ====================
 This section will provide descriptions of the systems associate with BioKEM, for
-technical guides on how to use the systems, see :doc:processing/how_to.
+technical guides on how to use the systems, see :doc:`/processing/how_to`.
 
     - :ref:`Petalibrary`
     - :ref:`Blanca-biokem`
