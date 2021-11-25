@@ -1,7 +1,7 @@
 Processing resources
 ====================
 This section will provide descriptions of the systems associate with BioKEM, for
-technical guides on how to use the systems, see :doc:/computing/how_to.
+technical guides on how to use the systems, see :doc:processing/how_to.
 
     - :ref:`Petalibrary`
     - :ref:`Blanca-biokem`
@@ -51,7 +51,7 @@ Blanca-viz
 In addition to the processing, login and compile nodes on Blanca, there are two
 GPU-accelerated visualization nodes that allow users to run graphical user
 interfaces, like ChimeraX. This is done through a web-based portal called
-`EngineFrame <https://www.colorado.edu/rc/resources/enginframe>`_ and is how
+`EnginFrame <https://www.colorado.edu/rc/resources/enginframe>`_ and is how
 even command line based computing should be done on Blanca.
 
 .. _CUmulus:

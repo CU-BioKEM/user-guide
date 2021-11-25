@@ -15,8 +15,9 @@ Camera. This user guide will provide step by step instructions for:
 
    faqs
    collecting
-   computing
+   processing
    storing
+   external_links
 
 For addition technical help please contact Chuck Moe (charles.moe@colorado.edu). For 
 additional help with the Blanca computing cluster or Petalibrary refer to 
