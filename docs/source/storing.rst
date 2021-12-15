@@ -24,6 +24,7 @@ The BioKEM facility has a number of storage devices for different applications:
 +----------------+--------+-------+----------+----------------------------+
 | Vault          | 58TB   | RAID6 | External | 3 months                   |
 +----------------+--------+-------+----------+----------------------------+
+*109TB shared between Active and Interm 
 
 .. image:: images/schematic_k3.png
    :width: 300
