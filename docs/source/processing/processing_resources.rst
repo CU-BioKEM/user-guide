@@ -58,6 +58,10 @@ interfaces, like ChimeraX. This is done through a web-based portal called
 `EnginFrame <https://www.colorado.edu/rc/resources/enginframe>`__ and is how
 even command line based computing should be done on Blanca.
 
+.. image:: ../images/schematic_cumulus.png
+   :width: 300
+   :align: right
+
 .. _CUmulus:
 
 CUmulus
