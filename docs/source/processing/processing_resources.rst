@@ -28,6 +28,10 @@ email rc-help@colorado.edu to request and allocation. We recommend requesting an
 allocation of about ~20TB/actively processing dataset. This service could also
 be a good long term storage option for already processed datasets.
 
+.. image:: ../images/blanca.png
+   :width: 300
+   :align: right
+
 .. _Blanca-biokem:
 
 Blanca-biokem
