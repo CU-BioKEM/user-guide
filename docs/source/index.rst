@@ -10,6 +10,10 @@ Microscopy facility (BioKEM) offers single particle cryo-EM and cryo-ET of
 plunge-frozen samples using a Titan Krios G3i with a Gatan K3 Direct Detection
 Camera. You are likely looking for :doc:`/processing/how_to`.
 
+.. image:: images/schematic.png
+   :width: 300
+   :align: right
+
 .. toctree::
    :maxdepth: 2
 

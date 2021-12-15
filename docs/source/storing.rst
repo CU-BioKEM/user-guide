@@ -13,6 +13,18 @@ The BioKEM facility has a number of storage devices for different applications:
     - :ref:`Interm storage`
     - :ref:`Vault`
 
++----------------+--------+-------+----------+----------------------------+
+| Device         | Size   | Type  | User     | Length of storage          |
++----------------+--------+-------+----------+----------------------------+
+| K3 Server      | 10TB   | RAID0 | Facility | Minutes (during capture)   |
++----------------+--------+-------+----------+----------------------------+
+| Active capture | 109TB* | RAID6 | Facility | Days (duration of capture) |
++----------------+--------+-------+----------+----------------------------+
+| Interm storage | 109TB* | RAID6 | User     | 2 weeks (auto deleted)     |
++----------------+--------+-------+----------+----------------------------+
+| Vault          | 58TB   | RAID6 | External | 3 months                   |
++----------------+--------+-------+----------+----------------------------+
+
 .. _K3 server:
 
 K3 server

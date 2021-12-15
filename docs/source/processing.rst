@@ -7,6 +7,10 @@ all three of these resources (see :doc:`processing/how_to`). In brief, you will
 host your dataset on Petalibrary, process it on nodes within the Blanca 
 computing cluster using software managed through SBGrid.
 
+.. image:: images/schematic.png
+   :width: 300
+   :align: right
+
 .. toctree::
    :maxdepth: 2
    
