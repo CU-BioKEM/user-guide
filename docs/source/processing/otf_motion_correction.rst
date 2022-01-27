@@ -4,12 +4,12 @@ The BioKEM facility can also offer on-the-fly motion correction and 2D classific
 through CryoSPARC or RELION (if you have a valid license) using our dedicated 
 preprossessing node. Ask Chuck for more details.
 
+.. image:: ../images/schematic_cryosparclive.png
+   :width: 200
+   :align: right
+
 CryoSPARC Live
 --------------
-
-.. image:: ../images/schematic_cryosparclive.png
-   :width: 100
-   :align: left
 
 To use CryoSPARC Live through the BioKEM facility we will employ a virtual 
 machine hosted on CUmulus. This vitrual machine will allow us to run jobs 
