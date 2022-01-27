@@ -6,6 +6,11 @@ preprossessing node. Ask Chuck for more details.
 
 CryoSPARC Live
 --------------
+
+.. image:: ../images/schematic_cryosparclive.png
+   :width: 300
+   :align: right
+
 To use CryoSPARC Live through the BioKEM facility we will employ a virtual 
 machine hosted on CUmulus. This vitrual machine will allow us to run jobs 
 longer than normally allowed and still be able to submit processing tasks 
