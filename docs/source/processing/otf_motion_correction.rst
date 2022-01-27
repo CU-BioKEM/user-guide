@@ -8,8 +8,8 @@ CryoSPARC Live
 --------------
 
 .. image:: ../images/schematic_cryosparclive.png
-   :width: 300
-   :align: right
+   :width: 100
+   :align: left
 
 To use CryoSPARC Live through the BioKEM facility we will employ a virtual 
 machine hosted on CUmulus. This vitrual machine will allow us to run jobs 
