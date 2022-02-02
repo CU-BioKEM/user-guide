@@ -43,7 +43,7 @@ Using software
 #. Now you can load the blanca envirnoment ``ml slurm/blanca``
 #. The first time you log into blanca:
    
-   - ``echo 'export MODULEPATH=$MODULEPATH:/projects/biokem/modules' >> ~/.bashrc``
+   - ``echo 'export MODULEPATH=/projects/biokem/modules:/programs/share/modulefiles/x86_64-linux:"$MODULEPATH"' >> ~/.bashrc``
    - ``source ~/.bashrc``
 
 #. You should now be able to run ``ml avail`` and see a few new modules
