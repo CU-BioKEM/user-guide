@@ -20,6 +20,20 @@ The biokem-storage server has a Globus endpoint configured, which allows users
 outside (or inside, if not better method exists) to transfer their data through
 Globus. The is a fairly secure option, although can be slow.
 
+#. Logon to the biokem-storage server.
+#. Start screen for running client in:
+  ``screen -S globus``
+#. Log into your globus client:
+   ``globus login``
+#. Copy and paste hyperlink into web browser.
+#. Code will be generated.
+#. Copy and paste code into biokem-storage terminal.
+#. Start the Globus connect: 
+   ``./home/biokem_manager/software/globus/globusconnectpersonal-3.1.5/globusconnectpersonal -start &``
+#. Detach from the screen:
+   ``ctrl+AD``
+#. Then, start the transfer on the Globus Connect GUI. 
+
 AWS
 ---
 If your lab/organization is user of AWS you may have your data dropped into an
