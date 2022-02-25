@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'BioKEM'
-copyright = '2021, Shawn Laursen'
+copyright = '2022, Shawn Laursen'
 author = 'Shawn Laursen'
 
 # The full version, including alpha/beta/rc tags

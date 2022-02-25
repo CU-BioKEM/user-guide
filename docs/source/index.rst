@@ -19,9 +19,9 @@ Camera. You are likely looking for :doc:`/processing/how_to`.
 
    faqs
    collecting
-   processing
-   storing
    getting
+   storing
+   processing
    external_links
 
 For addition technical help please contact Chuck Moe (charles.moe@colorado.edu). For 
