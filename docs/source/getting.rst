@@ -5,8 +5,8 @@ Getting your data
    :width: 300
    :align: right
 
-Push to Petalibrary **Preferred**
----------------------------------
+Push to Petalibrary (*Preferred method*)
+----------------------------------------
 The preferred method of getting your data from the BioKEM facility is to have us push
 it to your `biokem-deposit` folder. We can do this in real time so you can start 
 processing data as it comes off the scope (we can also do 
@@ -46,8 +46,8 @@ to a server your lab owns on CU's network. Once Chuck sets you up with a user
 account on the biokem-storage server you will be able to use an ``rsync`` command
 to transfer your data to your server from the ``Interm storage`` partition.
 
-External hard drive **Discouraged**
------------------------------------
+External hard drive (*Discouraged method*)
+------------------------------------------
 Transferring data via physically transporting an external hard drive is discouraged,
 as these disks are non-redundant, slow, and prone to physical damage. If none of
 the other methods are available to you however; you may drop off a hard drive to
