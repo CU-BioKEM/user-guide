@@ -55,7 +55,7 @@ Blanca-viz
 In addition to the processing, login and compile nodes on Blanca, there are two
 GPU-accelerated visualization nodes that allow users to run graphical user
 interfaces, like ChimeraX. This is done through a web-based portal called
-`EnginFrame <https://www.colorado.edu/rc/resources/enginframe>`__ and is how
+`CURC Open OnDemand <https://ondemand.rc.colorado.edu>`__ and is how
 even command line based computing should be done on Blanca.
 
 .. image:: ../images/schematic_cumulus.png
