@@ -22,7 +22,7 @@ Logging on
 
 #. You will be brought to a menu showing all current and recently completed remote desktops you have. Once the one you just opened it ready the header will turn green and a ``Launch Core Desktop`` button will appear, click it.
 
-#. You are now a remote desktop on one of the viz nodes. These nodes are equipped with 2 Quadro RTX 8000 GPUs to render graphics, although you may run compute jobs here, if you'd like.
+#. You are now on a remote desktop on one of the viz nodes. These nodes are equipped with 2 Quadro RTX 8000 GPUs to render graphics, although you may run compute jobs here, if you'd like.
 
 #. Click the small black terminal icon on the top bar to open a terminal.
 
