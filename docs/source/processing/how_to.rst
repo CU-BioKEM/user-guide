@@ -6,9 +6,8 @@ tasks in the :doc:`getting_started` section (If you are a CCET member, first see
 :doc:`ccet_users`). Once, you have done this, move onto :doc:`logging_on`.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    getting_started
    logging_on
    using_software
-   ccet_users

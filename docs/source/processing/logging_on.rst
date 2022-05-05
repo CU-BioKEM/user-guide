@@ -4,8 +4,6 @@ Logging on
 **The steps below assume you have already completed the** :doc:`getting_started`
 **steps.**
 
-#. Log onto onto CU's VPN (`setup through OIT <https://oit.colorado.edu/vpn-virtual-private-network>`_).
-
 #. Log into `CURC Open OnDemand <https://ondemand.rc.colorado.edu>`_.
 
    - Use your CU Research Computing credentials and Duo 2-factor authentication to log in.
@@ -17,7 +15,7 @@ Logging on
 
    - You can leave the ``Account`` blank
    - Fill in the desired number of hours you want the desktop job to persist (you can log back into it later, if the time requested isn't up), the default is generally fine.
-   - Unless you plan to do computing on the viz node itself (which is allowed, but generally not necessary), you can leave the default number of core
+   - Unless you plan to do computing on the viz node itself (which is allowed, but generally not necessary), you can leave the default number of cores
    - Click ``Launch``
 
 #. You will be brought to a menu showing all current and recently completed remote desktops you have. Once the one you just opened it ready the header will turn green and a ``Launch Core Desktop`` button will appear, click it.
