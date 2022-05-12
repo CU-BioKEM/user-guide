@@ -10,4 +10,4 @@ Computing:
 
 Where can I find documentation about SBGrid software?
 
-    *https://sbgrid.org/software/*
+    https://sbgrid.org/software/
