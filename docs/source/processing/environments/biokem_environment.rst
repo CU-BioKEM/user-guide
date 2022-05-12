@@ -10,8 +10,8 @@ Aliases
 
 Executables
 -----------
-- ``biokem-interactive``: starts an interactive session with X forwarding on a BioKEM node, use this launch jobs. This command only allocates a single CPU with no GPUs.
-- ``blanca-interactive``: starts an interactive session that is preemptable on a general blanca node. This command takes 2 arguments:
+- ``biokem/blanca/alpine-interactive``: starts an interactive session with X forwarding, use this launch jobs. This command only allocates a single CPU with no GPUs.
+- ``biokem/blanca/alpine-custom``: starts an interactive session that takes 2 additional arguments:
 
     - # of CPUs as the first argument
     - # of GPUs as the second argument
