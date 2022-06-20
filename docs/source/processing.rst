@@ -18,3 +18,4 @@ computing cluster using software managed through SBGrid.
    processing/processing_resources
    processing/how_to
    processing/ccet_users
+   processing/presentations

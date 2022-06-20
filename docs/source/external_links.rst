@@ -2,6 +2,7 @@ External links
 ==============
 
 - `BioKEM home <https://www.colorado.edu/facility/biokem/>`_
+- `BioKEM Computing on YouTube <https://www.youtube.com/channel/UC99DPhoCUQQOBhIe-LGmdYw>`_ 
 - `MDCB-EM home <https://www.colorado.edu/facility/ems/>`_
 - `CURC's status <https://curc.statuspage.io/>`_
 - `CURC's home <https://www.colorado.edu/rc/>`_
