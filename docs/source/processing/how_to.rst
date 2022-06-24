@@ -10,4 +10,6 @@ tasks in the :doc:`getting_started` section (If you are a CCET member, first see
 
    getting_started
    logging_on
+   configure
+   environments
    using_software

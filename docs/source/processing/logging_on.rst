@@ -24,4 +24,4 @@ Logging on
 
 #. Click the small black terminal icon on the top bar to open a terminal.
 
-#. To run compute jobs follow the :doc:`using_software` guide.
+#. To run compute jobs follow the :doc:`configure` guide.

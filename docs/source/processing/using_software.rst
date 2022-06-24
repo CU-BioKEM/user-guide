@@ -1,42 +1,45 @@
 Using software
 ==============
 
-**Now that you have logged onto Blanca, you can start computing. Use the** :ref:`SBGrid` **instructions if your lab has an SBGrid license or the** :ref:`Non-SBGrid` **instructions if your lab doesn't.**
+The Blanca cluster is managed by a `SLURM <https://slurm.schedmd.com>`__ system, which queues jobs from all users 
+and runs them when resources become available. There are two ways to run software on the cluster:
 
-.. _SBGrid:
+    - Using :ref:`SBATCH scripts`
+    - :ref:`Interactively` by allocating resources beforehand
 
-SBgrid
-------
+For various reasons, submitting an ``sbatch`` script is the preferred method.  
 
-#. The first time you log onto blanca, run the following command to enable our :doc:`environments/biokem_environment` at login:
+.. _SBATCH scripts:
 
-    ``echo 'source /projects/biokem/software/biokem/users/src/biokem_environment.src' >> ~/.bashrc``
+SBATCH scripts 
+--------------
 
-#. If you just ran the command above, close your terminal and open a new one.
+Many GUI based programs including RELION and CryoSPARC will submit these scripts for you.
 
-#. Run the ``biokem-interactive`` or ``blanca-interactive 1 0`` commands to start an interactive node that will allow you to use software.
+SBATCH scripts are shell scripts submitted to the SLURM manager using the command ``sbatch <script>``. The first 
+part of the script is used to tell the SLURM manager what resources you will need for your job and other 
+informaiton about how to run it. For example:
 
-#. Run ``sbgrid`` to start the environment.
 
-#. All SBGrid install programs should now be accessible by simply executing the desired executable.
+The rest of the script is were you will pass the commands to run your job. For example:
 
-#. To access RC installed programs use the ``module avail`` to show all available modules and ``module load <name>`` to load them.
 
-#. Please submit your jobs through the SLURM manager using ``sbatch`` (RELION and other programs handle this through the GUI).
+To specify that a job runs on the BioKEM nodes you need set these SBATCH variables:
 
-.. _Non-SBGrid:
+To specify that a job runs on any Blanca nodes you need set these SBATCH variables:
 
-Non-SBGrid
-----------
+To request a specific GPU:
 
-#. The first time you log onto blanca, run the following command to enable our :doc:`environments/non_sbgrid_environment` at login:
 
-    ``echo 'source /projects/biokem/software/biokem/users/src/non_sbgrid_environment.src' >> ~/.bashrc``
+**Always be realistic about how many resource your job will need to run. This
+will ensure your job runs quickly and doesn't hog resources that others might need.**
 
-#. If you just ran the command above, close your terminal and open a new one.
+**Another thing to remember is that the environment in which you submitted your** ``sbatch <script>`` \
+**command will be passed through to your job. You can always specify your environments, vairables, \
+or load modules before your running commands to ensure that it will run in the proper environment every time.** 
 
-#. Run the ``biokem-interactive`` or ``blanca-interactive 1 0`` commands to start an interactive node that will allow you to use software.
 
-#. To access BioKEM or RC installed programs use the ``module avail`` to show all available modules and ``module load <name>`` to load them.
+.. _Interactively:
 
-#. Please submit your jobs through the SLURM manager using ``sbatch`` (RELION and other programs handle this through the GUI).
+Interactively
+-------------
