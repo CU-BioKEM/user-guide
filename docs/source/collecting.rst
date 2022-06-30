@@ -7,4 +7,3 @@ Collecting data
    collecting/clipping
    collecting/screening
    collecting/collecting_data
-   collecting/microed
