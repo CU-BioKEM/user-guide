@@ -14,13 +14,12 @@ Aliases
 
 Executables
 -----------
-- ``biokem/blanca/alpine-interactive``: starts an interactive session with X forwarding, use this launch jobs. This command only allocates a single CPU with no GPUs.
-- ``biokem/blanca/alpine-custom``: starts an interactive session that takes the following arguments:
+- ``biokem/blanca/alpine-interactive``: starts an interactive session with X forwarding, use this launch jobs. You can add the following arguments, if you want to request additional resources:
 
-    - ``-c`` or ``--cpus`` # of CPUs 
-    - ``-g`` or ``--gpus`` # of GPUs 
-    - ``-m`` or ``--mem``  # of GB of memory 
-    - ``-x`` additional string to add an sbatch argument 
+    - ``-c`` or ``--cpus`` # of CPUs
+    - ``-g`` or ``--gpus`` # of GPUs
+    - ``-m`` or ``--mem``  # of GB of memory
+    - ``-x`` additional string to add an sbatch argument
 
 Variables
 ---------
@@ -40,8 +39,7 @@ Modules
 
 Executables
 -----------
-- ``biokem/blanca/alpine-interactive``: starts an interactive session with X forwarding, use this launch jobs. This command only allocates a single CPU with no GPUs.
-- ``biokem/blanca/alpine-custom``: starts an interactive session that takes the following arguments:
+- ``biokem/blanca/alpine-interactive``: starts an interactive session with X forwarding, use this launch jobs. You can add the following arguments, if you want to request additional resources:
 
     - ``-c`` or ``--cpus`` # of CPUs
     - ``-g`` or ``--gpus`` # of GPUs
