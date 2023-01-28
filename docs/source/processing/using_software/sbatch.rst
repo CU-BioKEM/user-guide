@@ -37,6 +37,7 @@ To specify that a job runs on the BioKEM nodes you need set these SBATCH variabl
 To specify that a job runs on any Blanca nodes you need set these SBATCH variables:
 
 .. code-block:: bash
+
   #!/bin/bash
   #SBATCH --partition=blanca           #submit to any nodes in blanca
   #SBATCH --qos=preemptable            #job can be interrupted, but will be requeued
