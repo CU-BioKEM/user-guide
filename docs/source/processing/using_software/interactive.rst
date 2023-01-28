@@ -8,8 +8,7 @@ To do this:
 
       .. code-block:: bash
 
-        biokem-interactive -c <# of cpus> -g <# of gpus> -m <# of GB of memory> -x <additional sbatch \
-        arguments>
+        biokem-interactive -c <# of cpus> -g <# of gpus> -m <# of GB of memory> -x <additional sbatch arguments>
 
       For example, if you wanted to run IMOD interactively with a GPU, you might use something like this:
 

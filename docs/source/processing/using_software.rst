@@ -19,6 +19,7 @@ Using specific programs on Blanca:
 
    using_software/relion
    using_software/cryosparc
+   using_software/alphafold
    using_software/imod
    using_software/eman2
    using_software/chimera
