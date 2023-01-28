@@ -5,6 +5,7 @@ In addition to running ``sbatch`` scripts, you may allocate resources and run jo
 
 To do this:
     - Spawn an interactive job with the right resources:
+
       .. code-block:: bash
 
         biokem-interactive -c <# of cpus> -g <# of gpus> -m <# of GB of memory> -x <additional sbatch \
