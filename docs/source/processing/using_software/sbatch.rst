@@ -36,26 +36,25 @@ To specify that a job runs on the BioKEM nodes you need set these SBATCH variabl
 
 To specify that a job runs on any Blanca nodes you need set these SBATCH variables:
 
-``
-#!/bin/bash
-#SBATCH --partition=blanca           #submit to any nodes in blanca
-#SBATCH --qos=preemptable            #job can be interrupted, but will be requeued
-#SBATCH --account=blanca-biokem      #need an account to submit jobs, don't change
-#SBATCH --job-name=my_blanca_job     #change this to something descriptive
-#SBATCH --nodes=1                    #number of nodes to allocate, never need to change
-#SBATCH --gres=gpu:0                 #number of gpus, set to 0 if not needed
-#SBATCH --ntasks=1                   #number of cpus to allocate
-#SBATCH --mem=8gb                    #how much memory to allocate
-#SBATCH --time=24:00:00              #time limit after which job will die 24hrs max on blanca or 168hrs if biokem
-#SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out    #output file of job - useful for checking progress of job
-#SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err     #error file of job - useful for debugging
+.. code-block:: bash
+  #!/bin/bash
+  #SBATCH --partition=blanca           #submit to any nodes in blanca
+  #SBATCH --qos=preemptable            #job can be interrupted, but will be requeued
+  #SBATCH --account=blanca-biokem      #need an account to submit jobs, don't change
+  #SBATCH --job-name=my_blanca_job     #change this to something descriptive
+  #SBATCH --nodes=1                    #number of nodes to allocate, never need to change
+  #SBATCH --gres=gpu:0                 #number of gpus, set to 0 if not needed
+  #SBATCH --ntasks=1                   #number of cpus to allocate
+  #SBATCH --mem=8gb                    #how much memory to allocate
+  #SBATCH --time=24:00:00              #time limit after which job will die 24hrs max on blanca or 168hrs if biokem
+  #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out    #output file of job - useful for checking progress of job
+  #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err     #error file of job - useful for debugging
 
-#load any modules you need here, the job will be submitted with current environment (i.e. SBGrid shell, if loaded)
-module load <modules>
+  #load any modules you need here, the job will be submitted with current environment (i.e. SBGrid shell, if loaded)
+  module load <modules>
 
-#execute commands here
-<commands>
-``
+  #execute commands here
+  <commands>
 
 To request a GPU:
 
