@@ -1,7 +1,7 @@
 Using software
 ==============
 
-The Blanca cluster is managed by a `SLURM <https://slurm.schedmd.com>`__ system, which queues jobs from all users 
+The Blanca cluster is managed by a `SLURM <https://slurm.schedmd.com>`_ system, which queues jobs from all users 
 and runs them when resources become available. There are two ways to run software on the cluster:
 
 .. toctree::
@@ -10,7 +10,7 @@ and runs them when resources become available. There are two ways to run softwar
    using_software/sbatch
    using_software/interactive
 
-For various reasons, submitting an ``sbatch`` script is the preferred method.  
+For various reasons, submitting an ``sbatch`` script is the preferred method.
 
 Using specific programs on Blanca:
 
