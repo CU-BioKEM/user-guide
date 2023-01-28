@@ -29,15 +29,13 @@ Input file
 The only input you need to run Alphafold is your sequence(s) of interest in a
 file in fasta format.
 
-  #. Navigate to a directory in your PL and make a new directory for each fold
-  you are attempting (``mkdir <dir_name>``)
+  #. Navigate to a directory in your PL and make a new directory for each fold you are attempting (``mkdir <dir_name>``)
   #. Create a fasta file (``touch <my_protein>.fa``)
   #. Edit fasta using nano, vim, or other.
 
     - You need to add your fasta header, which much contain a ``>`` followed by your protein name
     - You will then add your protein sequence in single letter codon format
-    - If you are folding a multimer, add multiple entries to this file
-    (``>``+name, sequence, ``>``+name, sequence, etc.)
+    - If you are folding a multimer, add multiple entries to this file (``>``+name, sequence, ``>``+name, sequence, etc.)
 
     example fasta:
 
@@ -59,7 +57,7 @@ I've created a command that should handle this all for you called
 
   #. Log on to OpenOnDemand :doc:`../logging_on`
   #. Start an interactive session ``biokem-interactive``
-  #. Make your :ref:Input
+  #. Make your :ref:`Input file`
   #. Run ``alphafold-predict``
 
     .. code-block:: bash
@@ -124,7 +122,7 @@ proteins, the alphafold-predict options will submit those when specified)
 Known errors
 ------------
 Running Alphafold in this way (either for a monomer or multimer) will result in
-the following error:
+the following error after about 40 minutes:
 
   .. code-block:: bash
 
