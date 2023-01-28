@@ -34,8 +34,7 @@ file in fasta format.
   #. Create a fasta file (``touch <my_protein>.fa``)
   #. Edit fasta using nano, vim, or other.
 
-    - You need to add your fasta header, which much contain a ``>`` followed by
-    your protein name
+    - You need to add your fasta header, which much contain a ``>`` followed by your protein name
     - You will then add your protein sequence in single letter codon format
     - If you are folding a multimer, add multiple entries to this file
     (``>``+name, sequence, ``>``+name, sequence, etc.)
@@ -55,10 +54,10 @@ Running alphafold
 To run alphafold, we will need to submit a job to ``sbatch`` requesting GPUs.
 I've created a command that should handle this all for you called
 ``alphafold-predict``. If you've set up your environment correctly
-:doc:`../configure.rst`, this should be in your path and will work if you are in a
+:doc:`../configure`, this should be in your path and will work if you are in a
 ``biokem-interactive`` session.
 
-  #. Log on to OpenOnDemand :doc:`../logging_on.rst`
+  #. Log on to OpenOnDemand :doc:`../logging_on`
   #. Start an interactive session ``biokem-interactive``
   #. Make your :ref:Input
   #. Run ``alphafold-predict``
