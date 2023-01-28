@@ -80,45 +80,45 @@ proteins, the alphafold-predict options will submit those when specified)
 
   .. code-block:: bash
 
-  #!/bin/bash
-  #SBATCH --partition=blanca
-  #SBATCH --qos=preemptable
-  #SBATCH --account=blanca-biokem
-  #SBATCH --job-name=alphafold_predict
-  #SBATCH --nodes=1
-  #SBATCH --ntasks=16
-  #SBATCH --mem=64gb
-  #SBATCH --gres=gpu:1
-  #SBATCH --time=24:00:00
-  #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
-  #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
+    #!/bin/bash
+    #SBATCH --partition=blanca
+    #SBATCH --qos=preemptable
+    #SBATCH --account=blanca-biokem
+    #SBATCH --job-name=alphafold_predict
+    #SBATCH --nodes=1
+    #SBATCH --ntasks=16
+    #SBATCH --mem=64gb
+    #SBATCH --gres=gpu:1
+    #SBATCH --time=24:00:00
+    #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
+    #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
 
-  #Path to fasta file, needs each monomer as own chain
-  FASTA=$1
-  echo "Predicting monomer for file: $1"
+    #Path to fasta file, needs each monomer as own chain
+    FASTA=$1
+    echo "Predicting monomer for file: $1"
 
-  #Run this inside SBGrid environment
-  source /programs/sbgrid.shrc
+    #Run this inside SBGrid environment
+    source /programs/sbgrid.shrc
 
-  #set to Alphafold 2.3.1 (database needs to be updated if changed)
-  ALPHAFOLD_X=2.3.1
-  DB='/pl/active/BioKEM/software/alphafolddb/'
+    #set to Alphafold 2.3.1 (database needs to be updated if changed)
+    ALPHAFOLD_X=2.3.1
+    DB='/pl/active/BioKEM/software/alphafolddb/'
 
-  /programs/x86_64-linux/alphafold/${ALPHAFOLD_X}/bin.capsules/run_alphafold.py \
-      --data_dir=${DB} \
-      --output_dir=$(pwd) \
-      --fasta_paths=${FASTA} \
-      --max_template_date=2020-05-14 \
-      --db_preset=full_dbs \
-      --bfd_database_path=${DB}bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-      --uniref30_database_path=${DB}uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
-      --uniref90_database_path=${DB}uniref90/uniref90.fasta \
-      --mgnify_database_path=${DB}mgnify/mgy_clusters_2018_12.fa \
-      --template_mmcif_dir=${DB}pdb_mmcif/mmcif_files \
-      --obsolete_pdbs_path=${DB}pdb_mmcif/obsolete.dat \
-      --use_gpu_relax=True \
-      --model_preset=monomer \
-      --pdb70_database_path=${DB}pdb70/pdb70
+    /programs/x86_64-linux/alphafold/${ALPHAFOLD_X}/bin.capsules/run_alphafold.py \
+        --data_dir=${DB} \
+        --output_dir=$(pwd) \
+        --fasta_paths=${FASTA} \
+        --max_template_date=2020-05-14 \
+        --db_preset=full_dbs \
+        --bfd_database_path=${DB}bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+        --uniref30_database_path=${DB}uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
+        --uniref90_database_path=${DB}uniref90/uniref90.fasta \
+        --mgnify_database_path=${DB}mgnify/mgy_clusters_2018_12.fa \
+        --template_mmcif_dir=${DB}pdb_mmcif/mmcif_files \
+        --obsolete_pdbs_path=${DB}pdb_mmcif/obsolete.dat \
+        --use_gpu_relax=True \
+        --model_preset=monomer \
+        --pdb70_database_path=${DB}pdb70/pdb70
 
 .. _Known errors:
 
