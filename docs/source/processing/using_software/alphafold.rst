@@ -22,7 +22,7 @@ RC infrastructure. I have downloaded it and place it in
 location, but won't be able to update it.). **Don't attempt to download this
 database on your own, use this one.**
 
-.. _Input:
+.. _Input file:
 
 Input file
 ----------
@@ -33,6 +33,7 @@ file in fasta format.
   you are attempting (``mkdir <dir_name>``)
   #. Create a fasta file (``touch <my_protein>.fa``)
   #. Edit fasta using nano, vim, or other.
+
     - You need to add your fasta header, which much contain a ``>`` followed by
     your protein name
     - You will then add your protein sequence in single letter codon format
@@ -47,17 +48,17 @@ file in fasta format.
     GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
     KEAAEENRALAKLHHELAIVED
 
-.. _Running:
+.. _Running alphafold:
 
 Running alphafold
 -----------------
 To run alphafold, we will need to submit a job to ``sbatch`` requesting GPUs.
 I've created a command that should handle this all for you called
 ``alphafold-predict``. If you've set up your environment correctly
-:doc:../configure.rst, this should be in your path and will work if you are in a
+:doc:`../configure.rst`, this should be in your path and will work if you are in a
 ``biokem-interactive`` session.
 
-  #. Log on to OpenOnDemand :doc:../logging_on.rst
+  #. Log on to OpenOnDemand :doc:`../logging_on.rst`
   #. Start an interactive session ``biokem-interactive``
   #. Make your :ref:Input
   #. Run ``alphafold-predict``
@@ -119,7 +120,7 @@ proteins, the alphafold-predict options will submit those when specified)
       --model_preset=monomer \
       --pdb70_database_path=${DB}pdb70/pdb70
 
-.. _Errors:
+.. _Known errors:
 
 Known errors
 ------------
