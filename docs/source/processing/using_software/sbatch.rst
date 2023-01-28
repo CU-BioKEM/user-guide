@@ -12,8 +12,8 @@ The first part of the script is used to tell the SLURM manager what resources yo
 informaiton about how to run it. The rest of the script is were you will pass the commands to run your job.
 
 To specify that a job runs on the BioKEM nodes you need set these SBATCH variables:
-
-``#!/bin/bash
+```bash
+#!/bin/bash
 #SBATCH --partition=blanca-biokem    #submit to any nodes owned by biokem
 #SBATCH --qos=blanca-biokem          #use biokem priorty
 #SBATCH --account=blanca-biokem      #need an account to submit jobs, don't change
@@ -29,12 +29,13 @@ To specify that a job runs on the BioKEM nodes you need set these SBATCH variabl
 #load any modules you need here, the job will be submitted with current environment (i.e. SBGrid shell, if loaded)
 module load <modules>
 
-#execute commands here 
-<commands>``
+#execute commands here
+<commands>
+```
 
 To specify that a job runs on any Blanca nodes you need set these SBATCH variables:
 
-```
+``
 #!/bin/bash
 #SBATCH --partition=blanca           #submit to any nodes in blanca
 #SBATCH --qos=preemptable            #job can be interrupted, but will be requeued
@@ -53,17 +54,17 @@ module load <modules>
 
 #execute commands here
 <commands>
-```
+``
 
 To request a GPU:
 
-Update this line with the number of GPUs ```#SBATCH --gres=gpu:1```
+Update this line with the number of GPUs ``#SBATCH --gres=gpu:1`
 
 To request a specific GPU:
 
-```#SBATCH --gres=gpu:a100:1```
+``#SBATCH --gres=gpu:a100:1``
 
-Where ```a100``` is ```a100,rtx6000,v100,etc.```
+Where ``a100`` is ``a100,rtx6000,v100,etc.``
 
 **Always be realistic about how many resource your job will need to run. This
 will ensure your job runs quickly and doesn't hog resources that others might need.**
