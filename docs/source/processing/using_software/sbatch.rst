@@ -12,6 +12,7 @@ The first part of the script is used to tell the SLURM manager what resources yo
 informaiton about how to run it. The rest of the script is were you will pass the commands to run your job.
 
 To specify that a job runs on the BioKEM nodes you need set these SBATCH variables:
+
 ```bash
 #!/bin/bash
 #SBATCH --partition=blanca-biokem    #submit to any nodes owned by biokem
