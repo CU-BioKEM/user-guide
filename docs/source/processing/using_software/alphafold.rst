@@ -35,7 +35,7 @@ file in fasta format.
 
     - You need to add your fasta header, which much contain a ``>`` followed by your protein name
     - You will then add your protein sequence in single letter codon format
-    - If you are folding a multimer, add multiple entries to this file (``>`` +name, sequence, ``>`` +name, sequence, etc.)
+    - If you are folding a multimer, add multiple entries to this file (``>`` + name, sequence, ``>`` + name, sequence, etc.)
 
     example fasta:
 
@@ -52,7 +52,7 @@ Running alphafold
 To run alphafold, we will need to submit a job to ``sbatch`` requesting GPUs.
 I've created a command that should handle this all for you called
 ``alphafold-predict``. If you've set up your environment correctly
-( see :doc:`../configure`), this should be in your path and will work if you are in a
+(see :doc:`../configure`), this should be in your path and will work if you are in a
 ``biokem-interactive`` session.
 
   #. Log on to OpenOnDemand :doc:`../logging_on`
