@@ -87,6 +87,7 @@ allocaion. We will follow these `instructions
 
    - Details > Add name
    - Source > Ubuntu 20.04 LTS
+   - Set volume to 16GB
    - Flavor > m5.large
    - Networks > projectnet2023-private
    - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
@@ -133,8 +134,14 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
       sudo make && sudo make install
       sudo mkdir -p /etc/slurm
       cd /etc/slurm
+
+    .. code-block:: bash
+
       sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
       sudo nano slurm.conf
+
+    .. code-block:: bash
+
       ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
       BackupController=alpine-slurmctl2.rc.int.colorado.edu
 
@@ -167,7 +174,6 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
       cd
       cp ../ubuntu/.profile .
       cp ../ubuntu/.bashrc .
-      mkdir setup
       mkdir .ssh
       cd .ssh
       touch authorized_keys
@@ -183,6 +189,7 @@ Now we need to mount the lab's PetaLibrary to the VM, according to CURC's
 
 .. code-block:: bash
 
+  exit (back to root user)
   sudo apt-get install sshfs
   sudo mkdir -p /pl/active/<lab's PL>
   sudo chmod -R o+w /pl
@@ -197,7 +204,7 @@ But we need to make a few important changes for this to work.
 
 .. code-block:: bash
 
-  sudo su shla9937
+  sudo su <user>
   mkdir /pl/active/<lab>/cryosparc_projects
   chmod g+w -R /pl/active/<lab>/cryosparc_projects
   cd
@@ -208,6 +215,12 @@ But we need to make a few important changes for this to work.
   cd ~/cryosparc
 
 Follow `instructions <https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/downloading-and-installing-cryosparc>`_
+
+.. code-block:: bash
+
+  source ../cryosparc_setup/license.src
+  curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
+  tar -xf
 
 Edit ``ip_address.sh`` to correct IP and run
 
