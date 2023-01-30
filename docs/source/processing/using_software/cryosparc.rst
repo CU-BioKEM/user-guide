@@ -114,16 +114,13 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
     sudo apt-get update
     sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
-
 #. Check SLURM version (on RC):
-
   .. code-block:: bash
 
     ml slurm/alpine
     sbatch --version
 
 #. On VM:
-
   .. code-block:: bash
 
     cd /opt
@@ -137,7 +134,6 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
     sudo nano slurm.conf
     ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
     BackupController=alpine-slurmctl2.rc.int.colorado.edu
-
 #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
 #. Make slurm user and group
 
@@ -155,7 +151,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
     whoami
     id -g -n $USER
 
-#. On VM:
+#. On VM (make sure to clone correct slurm):
 
   .. code-block:: bash
 
