@@ -21,8 +21,8 @@ time. However, you will be able to add new users. To do this:
 
   #. Have the user send their curc.pub key
 
-    - Let's store these in lab PL or projects (you do not want to swap this for your own key)
-    - Have user run ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
+     - Let's store these in lab PL or projects (you do not want to swap this for your own key)
+     - Have user run ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
 
   #. Add their curc.pub key to the VM ``cat <user>_curc.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'
   #. Add them in the GUI as normal
@@ -66,12 +66,12 @@ Setup (facility use only)
 **Do not attempt to do this on your own.** Cryosparc is a pain in the butt to
 get to play with CURC infrastructure, but it can be done. Here, we will:
 
-  - :ref:`VM`
-  - :ref:`SLURM integration`
-  - :ref:`Mount PL`
-  - :ref:`Cryomaster`
-  - :ref:`Cryoworker`
-  - :ref:`Cryo aliases`
+   - :ref:`VM`
+   - :ref:`SLURM integration`
+   - :ref:`Mount PL`
+   - :ref:`Cryomaster`
+   - :ref:`Cryoworker`
+   - :ref:`Cryo aliases`
 
 .. _VM:
 
@@ -85,19 +85,19 @@ allocaion. We will follow these `instructions
 #. Go to `OpenStack <https://cumulus.rc.colorado.edu/auth/login/?next=/>`_
 #. Instances > `Launch Instance`
 
-    - Details > Add name
-    - Source > Ubuntu 20.04 LTS
-    - Flavor > m5.large
-    - Networks > projectnet2023-private
-    - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
-    - Key Pair > add BioKEM global user's RSA key**
+   - Details > Add name
+   - Source > Ubuntu 20.04 LTS
+   - Flavor > m5.large
+   - Networks > projectnet2023-private
+   - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
+   - Key Pair > add BioKEM global user's RSA key**
 
 #. Associate Floating IP
 
-    - ``+``
-    - Pool > scinet-internal
-    - Allocate IP
-    - Associate
+   - ``+``
+   - Pool > scinet-internal
+   - Allocate IP
+   - Associate
 
 
 .. _SLURM integration:
@@ -142,10 +142,10 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
 #. On VM:
 
-  - ``sudo groupadd -g <group num> <group name>``
-  - ``sudo useradd -u 569708 -g <user num> <user>``
-  - ``sudo mkdir /home/<user>``
-  - ``sudo chown -R <user> /home/<user>``
+   - ``sudo groupadd -g <group num> <group name>``
+   - ``sudo useradd -u 569708 -g <user num> <user>``
+   - ``sudo mkdir /home/<user>``
+   - ``sudo chown -R <user> /home/<user>``
 
     • sudo su shla9937
     • cd
