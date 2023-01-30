@@ -35,7 +35,7 @@ forward each lab will have their own set of ports listed below (only affects the
 CURC side of things, not the VM). You do not need to do anything with these,
 this is for IT housekeeping purposes only.
 
-  .. list-table:: List of Cryosparc ports
+  . list-table:: List of Cryosparc ports
      :widths: 25 25
      :header-rows: 1
 
@@ -57,8 +57,6 @@ this is for IT housekeeping purposes only.
        - Cech
        - Wuttke
        - Taatjes
-
-  :list-table::`List of Cryosparc ports`
 
 .. _Setup:
 
