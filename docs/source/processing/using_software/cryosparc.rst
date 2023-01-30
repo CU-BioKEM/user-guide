@@ -116,7 +116,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
   	- Log onto login node
   	- ``ml slurm/alpine``
   	- ``sbatch --version`` -> check version
-    -	cd /opt
+    -	``cd /opt``
 		- ``sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git``
 		- ``cd slurm``
 		- ``sudo ./configure --with-jwt --disable-dependency-tracking``
@@ -125,8 +125,34 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 		- ``cd /etc/slurm``
 		- ``sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .``
 		- ``sudo nano slurm.conf``
-    - edit to ``ControlMachine=alpine-slurmctl1.rc.int.colorado.edu``
-  	- edit to ``BackupController=alpine-slurmctl2.rc.int.colorado.edu``
+    - ``ControlMachine=alpine-slurmctl1.rc.int.colorado.edu``
+  	- ``BackupController=alpine-slurmctl2.rc.int.colorado.edu``
+
+  #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
+  #. ``sudo groupadd -g 515 slurm``
+  #. ``sudo useradd -u 515 -g 515 slurm``
+  #. Log onto RC
+
+    - id -u $USER -> 569708
+      □ id -g $USER -> 569708
+      □ whoami -> shla9937
+      □ id -g -n $USER -> shla9937pgrp
+    • On VM -> sudo groupadd -g 569708 shla9937pgrp
+    • sudo useradd -u 569708 -g 569708 shla9937
+    • sudo mkdir /home/shla9937
+    • sudo chown -R shla9937 /home/shla9937
+    • Change shell for shla9937
+      □ sudo nano /etc/passwd
+      □ Change /bin/sh to /bin/bash
+    • sudo su shla9937
+    • cd
+    • cp ../ubuntu/.profile .
+    • cp ../ubuntu/.bashrc .
+    • mkdir setup
+    • mkdir .ssh
+    • cd .ssh
+    • Touch authorized_keys
+    Copy over Curc.pub key
 
 add lab admin's RSA key
 
