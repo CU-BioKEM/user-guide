@@ -30,30 +30,31 @@ submit jobs within 24hrs of someone who has token access logging onto CURC**
 
 List of ports
 -------------
-To access Cryosparc port forwarding is necessary, to avoid getting the wrong
-forward each lab will have their own set of ports listed below (only affects the
-CURC side of things, not the VM). You do not need to do anything with these,
+To access Cryosparc port forwarding is necessary. To avoid getting the wrong
+forward, each lab will have their own set of ports listed below (only affects
+the CURC side of things, not the VM). You do not need to do anything with these,
 this is for IT housekeeping purposes only.
 
-  | Ports | Lab |
-  ---------------
-  | 39000-39009 | Luger |
-  -----------------------
-  | 39010-39019 | Sousa |
-  -----------------------
+  +-------------+------------------+
+  | Ports       | Lab              |
+  +-------------+------------------+
+  | 39000-39009 | Luger            |
+  +-------------+------------------+
+  | 39010-39019 | Sousa            |
+  +-------------+------------------+
   | 39020-39029 | Whiteley (Aaron) |
-  ----------------------------------
-  | 39030-39039 | Kasinath |
-  --------------------------
-  | 39040-39049 | Aydin |
-  -----------------------
-  | 39050-39059 | Cech |
-  ----------------------
-  | 39060-39069 | Wuttke |
-  ------------------------
-  | 39070-39079 | Taatjes |
-  -------------------------
-  
+  +-------------+------------------+
+  | 39030-39039 | Kasinath         |
+  +-------------+------------------+
+  | 39040-39049 | Aydin            |
+  +-------------+------------------+
+  | 39050-39059 | Cech             |
+  +-------------+------------------+
+  | 39060-39069 | Wuttke           |
+  +-------------+------------------+
+  | 39070-39079 | Taatjes          |
+  +-------------+------------------+
+
 .. _Setup:
 
 Setup (facility use only)
