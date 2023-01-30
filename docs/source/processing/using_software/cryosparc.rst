@@ -90,9 +90,7 @@ allocaion. We will follow these `instructions
   - Networks > projectnet2023-private
   - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
   - Key Pair > add BioKEM global user's RSA key**
-  
 #. Associate Floating IP
-
   - ``+``
   - Pool > scinet-internal
   - Allocate IP
