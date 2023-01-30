@@ -118,7 +118,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
 #. On VM:
 
-    -	``cd /opt``
+    -	``cd \/opt``
 		- ``sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git``
 		- ``cd slurm``
 		- ``sudo ./configure --with-jwt --disable-dependency-tracking``
