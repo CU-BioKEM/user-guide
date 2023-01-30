@@ -117,60 +117,60 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
 #. Check SLURM version (on RC):
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  ml slurm/alpine
-  sbatch --version
+      ml slurm/alpine
+      sbatch --version
 
 #. On VM:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  cd /opt
-  sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
-  cd slurm
-  sudo ./configure --with-jwt --disable-dependency-tracking
-  sudo make && sudo make install
-  sudo mkdir -p /etc/slurm
-  cd /etc/slurm
-  sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
-  sudo nano slurm.conf
-  ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
-  BackupController=alpine-slurmctl2.rc.int.colorado.edu
+      cd /opt
+      sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
+      cd slurm
+      sudo ./configure --with-jwt --disable-dependency-tracking
+      sudo make && sudo make install
+      sudo mkdir -p /etc/slurm
+      cd /etc/slurm
+      sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
+      sudo nano slurm.conf
+      ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
+      BackupController=alpine-slurmctl2.rc.int.colorado.edu
 
 #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
 #. Make slurm user and group
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-     sudo groupadd -g 515 slurm
-     sudo useradd -u 515 -g 515 slurm
+       sudo groupadd -g 515 slurm
+       sudo useradd -u 515 -g 515 slurm
 
 #. Log onto RC to find lab admin's user and group (BioKEM user in future):
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    id -u $USER
-    id -g $USER
-    whoami
-    id -g -n $USER
+      id -u $USER
+      id -g $USER
+      whoami
+      id -g -n $USER
 
 #. On VM (make sure to clone correct slurm):
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    sudo groupadd -g <group num> <group name>
-    sudo useradd -u 569708 -g <user num> <user>
-    sudo mkdir /home/<user>
-    sudo chown -R <user> /home/<user>
-    sudo su shla9937
-    cd
-    cp ../ubuntu/.profile .
-    cp ../ubuntu/.bashrc .
-    mkdir setup
-    mkdir .ssh
-    cd .ssh
-    touch authorized_keys
+      sudo groupadd -g <group num> <group name>
+      sudo useradd -u 569708 -g <user num> <user>
+      sudo mkdir /home/<user>
+      sudo chown -R <user> /home/<user>
+      sudo su shla9937
+      cd
+      cp ../ubuntu/.profile .
+      cp ../ubuntu/.bashrc .
+      mkdir setup
+      mkdir .ssh
+      cd .ssh
+      touch authorized_keys
 
 #. Copy over curc.pub key ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
 
