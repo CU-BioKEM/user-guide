@@ -167,10 +167,10 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
     .. code-block:: bash
 
       sudo groupadd -g <group num> <group name>
-      sudo useradd -u 569708 -g <user num> <user>
+      sudo useradd -u <user num> -g <user num> <user>
       sudo mkdir /home/<user>
       sudo chown -R <user> /home/<user>
-      sudo su shla9937
+      sudo su <user>
       cd
       cp ../ubuntu/.profile .
       cp ../ubuntu/.bashrc .
@@ -220,8 +220,10 @@ Follow `instructions <https://guide.cryosparc.com/setup-configuration-and-manage
 
   source ../cryosparc_setup/license.src
   curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
-  tar -xf
+  tar -xf *gz
+  cd ../cryosparc_setup
 
+Edit ``run_installer.sh`` and run
 Edit ``ip_address.sh`` to correct IP and run
 
 .. _Cryoworker:
