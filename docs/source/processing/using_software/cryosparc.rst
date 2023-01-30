@@ -174,22 +174,51 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
 #. Copy over curc.pub key ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
 
-add lab admin's RSA key
-
 .. _Mount PL:
 
 Mount lab PetaLibrary
 ^^^^^^^^^^^^^^^^^^^^^
+Now we need to mount the lab's PetaLibrary to the VM, according to CURC's
+`instructions <https://curc.readthedocs.io/en/latest/tutorials/cumulus4.html>`_.
+
+.. code-block:: bash
+
+  sudo apt-get install sshfs
+  sudo mkdir -p /pl/active/<lab's PL>
+  sudo chmod -R o+w /pl
+  sudo sshfs -o allow_other <user>@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab>
 
 .. _Cryomaster:
 
 Install 'master' Cryosparc
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install the 'master' Cryosparc on the VM use their `instructions <https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/downloading-and-installing-cryosparc>`_.
+But we need to make a few important changes for this to work.
+
+.. code-block:: bash
+
+  sudo su shla9937
+  mkdir /pl/active/<lab>/cryosparc_projects
+  chmod g+w -R /pl/active/<lab>/cryosparc_projects
+  cd
+  git clone https://github.com/CU-BioKEM/cryosparc_setup.git
+  cd cryosparc_setup
+  nano license.src -> export LICENSE_ID=" "
+  mkdir ~/cryosparc
+  cd ~/cryosparc
+
+Follow `instructions <https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/downloading-and-installing-cryosparc>`_
+
+Edit ``ip_address.sh`` to correct IP and run
 
 .. _Cryoworker:
 
 Install 'worker' Cryosparc
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Now that we've installed the 'master' instance, we can install the worker on Alpine.
+
+
+
 
 .. _Cryo aliases:
 
