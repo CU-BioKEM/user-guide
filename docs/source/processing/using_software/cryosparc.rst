@@ -110,10 +110,10 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
 #. Log on to the VM ``ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>``
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  sudo apt-get update
-  sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
+      sudo apt-get update
+      sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
 
 #. Check SLURM version (on RC):
 
@@ -137,7 +137,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
   sudo nano slurm.conf
   ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
   BackupController=alpine-slurmctl2.rc.int.colorado.edu
-  
+
 #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
 #. Make slurm user and group
 
