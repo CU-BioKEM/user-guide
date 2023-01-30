@@ -110,30 +110,30 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
 #. Log on to the VM ``ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>``
 
-  .. code-block:: bash
+.. code-block:: bash
 
-    sudo apt-get update
-    sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
+  sudo apt-get update
+  sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
 #. Check SLURM version (on RC):
-  .. code-block:: bash
+.. code-block:: bash
 
-    ml slurm/alpine
-    sbatch --version
+  ml slurm/alpine
+  sbatch --version
 
 #. On VM:
-  .. code-block:: bash
+.. code-block:: bash
 
-    cd /opt
-    sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
-    cd slurm
-    sudo ./configure --with-jwt --disable-dependency-tracking
-    sudo make && sudo make install
-    sudo mkdir -p /etc/slurm
-    cd /etc/slurm
-    sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
-    sudo nano slurm.conf
-    ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
-    BackupController=alpine-slurmctl2.rc.int.colorado.edu
+  cd /opt
+  sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
+  cd slurm
+  sudo ./configure --with-jwt --disable-dependency-tracking
+  sudo make && sudo make install
+  sudo mkdir -p /etc/slurm
+  cd /etc/slurm
+  sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
+  sudo nano slurm.conf
+  ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
+  BackupController=alpine-slurmctl2.rc.int.colorado.edu
 #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
 #. Make slurm user and group
 
