@@ -66,7 +66,7 @@ Setup (facility use only)
 get to play with CURC infrastructure, but it can be done. Here, we will:
 
   - :ref:`VM`
-  - :ref:`SLURM`
+  - :ref:`SLURM integration`
   - :ref:`PL`
   - :ref:`Cryomaster`
   - :ref:`Cryoworker`
@@ -76,8 +76,14 @@ get to play with CURC infrastructure, but it can be done. Here, we will:
 
 Create a Cryosparc VM
 ^^^^^^^^^^^^^^^^^^^^^
+We will spin up a small VM to run the 'master' instance of Cryosparc on CURC's
+CUmulus cloud service. Currently, only the BioKEM IT admin has access to this
+allocaion. We will follow these `instructions
+<https://curc.readthedocs.io/en/latest/tutorials/cumulus1.html>`_.
 
-.. _SLURM:
+#.
+
+.. _SLURM integration:
 
 Integrate SLURM
 ^^^^^^^^^^^^^^^
