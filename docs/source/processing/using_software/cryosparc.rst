@@ -22,8 +22,8 @@ time. However, you will be able to add new users. To do this:
   #. run the command ``cryosparc add-key <new users public RSA key>``
   #. Add them in the GUI as normal
 
-**The first step is necessary to allow the user to generate new tokens that allow
-Cryosparc to submit jobs to SLURM, without doing this, they will only be able to
+**The first step is necessary to allow the user to generate new tokens that needs
+Cryosparc to submit jobs to SLURM. Without doing this, they will only be able to
 submit jobs within 24hrs of someone who has token access logging onto CURC**
 
 .. _List of ports:
@@ -58,6 +58,8 @@ this is for IT housekeeping purposes only.
        - Wuttke
        - Taatjes
 
+  :list-table::`List of Cryosparc ports`
+
 .. _Setup:
 
 Setup (facility use only)
@@ -67,10 +69,10 @@ get to play with CURC infrastructure, but it can be done. Here, we will:
 
   - :ref:`VM`
   - :ref:`SLURM integration`
-  - :ref:`PL`
+  - :ref:`Mount PL`
   - :ref:`Cryomaster`
   - :ref:`Cryoworker`
-  - :ref:`Aliases`
+  - :ref:`Cryo aliases`
 
 .. _VM:
 
@@ -88,7 +90,7 @@ allocaion. We will follow these `instructions
 Integrate SLURM
 ^^^^^^^^^^^^^^^
 
-.. _PL:
+.. _Mount PL:
 
 Mount lab PetaLibrary
 ^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +105,7 @@ Install 'master' Cryosparc
 Install 'worker' Cryosparc
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. _Aliases:
+.. _Cryo aliases:
 
 Create CURC aliases
 ^^^^^^^^^^^^^^^^^^^
