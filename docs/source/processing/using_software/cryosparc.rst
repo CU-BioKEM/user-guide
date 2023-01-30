@@ -23,7 +23,7 @@ time. However, you will be able to add new users. To do this:
 
     - Let's store these in lab PL or projects (you do not want to swap this for your own key)
     - Have user run ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
-    
+
   #. Add their curc.pub key to the VM ``cat <user>_curc.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'
   #. Add them in the GUI as normal
 
@@ -84,17 +84,16 @@ allocaion. We will follow these `instructions
 
 #. Go to `OpenStack <https://cumulus.rc.colorado.edu/auth/login/?next=/>`_
 #. Instances > `Launch Instance`
-
   - Details > Add name
   - Source > Ubuntu 20.04 LTS
   - Flavor > m5.large
   - Networks > projectnet2023-private
   - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
   - Key Pair > add BioKEM global user's RSA key**
-
+  
 #. Associate Floating IP
 
-  - `+`
+  - ``+``
   - Pool > scinet-internal
   - Allocate IP
   - Associate
@@ -106,7 +105,7 @@ Integrate SLURM
 ^^^^^^^^^^^^^^^
 In order to submit jobs to Alpine's SLURM environment, we need to install the
 rigth version of SLURM, import Alpine's slurm config, and set up a user that has
-permission to submit jobs.
+permission to submit jobs. We will be using a variation of `this <https://curc.readthedocs.io/en/latest/cloud/slurm-integration.html>`_.
 
 #. Log on to the VM ``ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>``
 #.
