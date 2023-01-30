@@ -109,12 +109,18 @@ rigth version of SLURM, import Alpine's slurm config, and set up a user that has
 permission to submit jobs. We will be using a variation of `this <https://curc.readthedocs.io/en/latest/cloud/slurm-integration.html>`_.
 
 #. Log on to the VM ``ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>``
-#. ``sudo apt-get update``
-#. ``sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make``
+
+  .. code-block:: bash
+
+    sudo apt-get update
+    sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
+
 #. Check SLURM version (on RC):
 
-   - ``ml slurm/alpine``
-   - ``sbatch --version``
+  .. code-block:: bash
+
+    ml slurm/alpine
+    sbatch --version
 
 #. On VM:
 
@@ -133,33 +139,40 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
     BackupController=alpine-slurmctl2.rc.int.colorado.edu
 
 #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
+#. Make slurm user and group
 
   .. code-block:: bash
+
      sudo groupadd -g 515 slurm
      sudo useradd -u 515 -g 515 slurm
-#. Log onto RC:
 
-   - ``id -u $USER`` -> record
-   - ``id -g $USER`` -> record
-   - ``whoami`` -> record
-   - ``id -g -n $USER`` -> record
+#. Log onto RC to find lab admin's user and group (BioKEM user in future):
+
+  .. code-block:: bash
+
+    id -u $USER
+    id -g $USER
+    whoami
+    id -g -n $USER
 
 #. On VM:
 
-   - ``sudo groupadd -g <group num> <group name>``
-   - ``sudo useradd -u 569708 -g <user num> <user>``
-   - ``sudo mkdir /home/<user>``
-   - ``sudo chown -R <user> /home/<user>``
+  .. code-block:: bash
 
-    • sudo su shla9937
-    • cd
-    • cp ../ubuntu/.profile .
-    • cp ../ubuntu/.bashrc .
-    • mkdir setup
-    • mkdir .ssh
-    • cd .ssh
-    • Touch authorized_keys
-    Copy over Curc.pub key
+    sudo groupadd -g <group num> <group name>
+    sudo useradd -u 569708 -g <user num> <user>
+    sudo mkdir /home/<user>
+    sudo chown -R <user> /home/<user>
+    sudo su shla9937
+    cd
+    cp ../ubuntu/.profile .
+    cp ../ubuntu/.bashrc .
+    mkdir setup
+    mkdir .ssh
+    cd .ssh
+    touch authorized_keys
+
+#. Copy over curc.pub key ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
 
 add lab admin's RSA key
 
