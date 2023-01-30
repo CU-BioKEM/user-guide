@@ -119,6 +119,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 #. On VM:
 
   .. code-block:: bash
+
     cd /opt
     sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
     cd slurm
