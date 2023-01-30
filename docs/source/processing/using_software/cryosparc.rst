@@ -232,7 +232,13 @@ Install 'worker' Cryosparc
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that we've installed the 'master' instance, we can install the worker on Alpine.
 
+Log onto RC
 
+.. code-block:: bash
+
+  export <$LICENSE_ID>
+  curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
+  tar-xf *gz
 
 
 .. _Cryo aliases:
