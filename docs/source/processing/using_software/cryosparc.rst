@@ -140,13 +140,11 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
   #. On VM:
 
-    - ``sudo groupadd -g 569708 shla9937pgrp``
-    - ``sudo useradd -u 569708 -g 569708 shla9937``
-    • sudo mkdir /home/shla9937
-    • sudo chown -R shla9937 /home/shla9937
-    • Change shell for shla9937
-      □ sudo nano /etc/passwd
-      □ Change /bin/sh to /bin/bash
+    - ``sudo groupadd -g <group num> <group name>``
+    - ``sudo useradd -u 569708 -g <user num> <user>``
+    - ``sudo mkdir /home/<user>``
+    - ``sudo chown -R <user> /home/<user>``
+
     • sudo su shla9937
     • cd
     • cp ../ubuntu/.profile .
