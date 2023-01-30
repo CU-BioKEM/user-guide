@@ -115,7 +115,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
   	- Log onto login node
   	- ``ml slurm/alpine``
-  	- ``sbatch --version`` -> check version
+  	- ``sbatch --version``
     -	``cd /opt``
 		- ``sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git``
 		- ``cd slurm``
@@ -131,14 +131,17 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
   #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
   #. ``sudo groupadd -g 515 slurm``
   #. ``sudo useradd -u 515 -g 515 slurm``
-  #. Log onto RC
+  #. Log onto RC:
 
-    - id -u $USER -> 569708
-      □ id -g $USER -> 569708
-      □ whoami -> shla9937
-      □ id -g -n $USER -> shla9937pgrp
-    • On VM -> sudo groupadd -g 569708 shla9937pgrp
-    • sudo useradd -u 569708 -g 569708 shla9937
+    - ``id -u $USER`` -> record
+    - ``id -g $USER`` -> record
+    - ``whoami`` -> record
+    - ``id -g -n $USER`` -> record
+
+  #. On VM:
+
+    - ``sudo groupadd -g 569708 shla9937pgrp``
+    - ``sudo useradd -u 569708 -g 569708 shla9937``
     • sudo mkdir /home/shla9937
     • sudo chown -R shla9937 /home/shla9937
     • Change shell for shla9937
