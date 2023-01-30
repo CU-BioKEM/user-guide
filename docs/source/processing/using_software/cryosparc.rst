@@ -111,11 +111,13 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 #. Log on to the VM ``ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>``
 #. ``sudo apt-get update``
 #. ``sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make``
-#. Install SLURM
+#. Check SLURM version (on RC):
 
-  	- Log onto login node
   	- ``ml slurm/alpine``
   	- ``sbatch --version``
+
+#. On VM:
+
     -	``cd /opt``
 		- ``sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git``
 		- ``cd slurm``
