@@ -109,7 +109,27 @@ rigth version of SLURM, import Alpine's slurm config, and set up a user that has
 permission to submit jobs. We will be using a variation of `this <https://curc.readthedocs.io/en/latest/cloud/slurm-integration.html>`_.
 
 #. Log on to the VM ``ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>``
-#.
+#. ``sudo apt-get update``
+#. ``sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make``
+#. Install SLURM
+
+    -	cd /opt
+		- Check alpine's slurm version
+		  - Log onto login node
+			- ``ml slurm/alpine``
+			- ``sbatch --version``
+		- ``sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git``
+		- ``cd slurm``
+		- ``sudo ./configure --with-jwt --disable-dependency-tracking``
+		- ``sudo make && sudo make install``
+		- ``sudo mkdir -p /etc/slurm``
+		- ``cd /etc/slurm``
+		- ``sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .``
+		- ``sudo nano slurm.conf``
+		  - edit to ``ControlMachine=alpine-slurmctl1.rc.int.colorado.edu``
+			- edit to ``BackupController=alpine-slurmctl2.rc.int.colorado.edu``
+
+Change BackupController=slurm4to BackupController=slurm4.rc.int.colorado.edu
 
 add lab admin's RSA key
 
