@@ -1,0 +1,103 @@
+Cryosparc
+=========
+
+.. _General users:
+
+General users
+-------------
+Once your lab has set up a Cryosparc installation with the BioKEM IT person, all
+you need to do to run it is:
+
+  #. Log on to OpenOnDemand (:doc:`../logging_on`)
+  #. Run the command ``cryosparc``
+
+.. _Lab admins:
+
+Lab admins
+----------
+Due to the nature of integrating cryosparc into CURC's environment, updating
+versions or doing many other administrative tasks will not be supported at this
+time. However, you will be able to add new users. To do this:
+
+  #. run the command ``cryosparc add-key <new users public RSA key>``
+  #. Add them in the GUI as normal
+
+**The first step is necessary to allow the user to generate new tokens that allow
+Cryosparc to submit jobs to SLURM, without doing this, they will only be able to
+submit jobs within 24hrs of someone who has token access logging onto CURC**
+
+.. _List of ports:
+
+List of ports
+-------------
+To access Cryosparc port forwarding is necessary, to avoid getting the wrong
+forward each lab will have their own set of ports listed below (only affects the
+CURC side of things, not the VM). You do not need to do anything with these,
+this is for IT housekeeping purposes only.
+
+  .. list-table:: List of Cryosparc ports
+     :widths: 25 25
+     :header-rows: 1
+
+     * - Ports
+       - Lab
+     * - 39000-39009
+       - 39010-39019
+       - 39020-39029
+       - 39030-39039
+       - 39040-39049
+       - 39050-39059
+       - 39060-39069
+       - 39070-39079
+     * - Luger
+       - Sousa
+       - Whiteley (Aaron)
+       - Kasinath
+       - Aydin
+       - Cech
+       - Wuttke
+       - Taatjes
+
+.. _Setup:
+
+Setup (facility use only)
+-------------------------
+**Do not attempt to do this on your own.** Cryosparc is a pain in the butt to
+get to play with CURC infrastructure, but it can be done. Here, we will:
+
+  - :ref:`VM`
+  - :ref:`SLURM`
+  - :ref:`PL`
+  - :ref:`Cryomaster`
+  - :ref:`Cryoworker`
+  - :ref:`Aliases`
+
+.. _VM:
+
+Create a Cryosparc VM
+^^^^^^^^^^^^^^^^^^^^^
+
+.. _SLURM:
+
+Integrate SLURM
+^^^^^^^^^^^^^^^
+
+.. _PL:
+
+Mount lab PetaLibrary
+^^^^^^^^^^^^^^^^^^^^^
+
+.. _Cryomaster:
+
+Install 'master' Cryosparc
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. _Cryoworker:
+
+Install 'worker' Cryosparc
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. _Aliases:
+
+Create CURC aliases
+^^^^^^^^^^^^^^^^^^^
