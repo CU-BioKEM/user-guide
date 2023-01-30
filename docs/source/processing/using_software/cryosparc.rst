@@ -84,17 +84,20 @@ allocaion. We will follow these `instructions
 
 #. Go to `OpenStack <https://cumulus.rc.colorado.edu/auth/login/?next=/>`_
 #. Instances > `Launch Instance`
-  - Details > Add name
-  - Source > Ubuntu 20.04 LTS
-  - Flavor > m5.large
-  - Networks > projectnet2023-private
-  - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
-  - Key Pair > add BioKEM global user's RSA key**
+
+    - Details > Add name
+    - Source > Ubuntu 20.04 LTS
+    - Flavor > m5.large
+    - Networks > projectnet2023-private
+    - Security Groups > hpc-ssh, default, ssh-restricted, icmp, rfc-1918
+    - Key Pair > add BioKEM global user's RSA key**
+
 #. Associate Floating IP
-  - ``+``
-  - Pool > scinet-internal
-  - Allocate IP
-  - Associate
+
+    - ``+``
+    - Pool > scinet-internal
+    - Allocate IP
+    - Associate
 
 
 .. _SLURM integration:
