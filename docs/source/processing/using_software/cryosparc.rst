@@ -119,21 +119,23 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 #. On VM:
 
   .. code-block:: bash
-     cd /opt
-     sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
-     cd slurm
-     sudo ./configure --with-jwt --disable-dependency-tracking
-     sudo make && sudo make install
-     sudo mkdir -p /etc/slurm
-     cd /etc/slurm
-     sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
-     sudo nano slurm.conf
-     ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
-     BackupController=alpine-slurmctl2.rc.int.colorado.edu
+    cd /opt
+    sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git
+    cd slurm
+    sudo ./configure --with-jwt --disable-dependency-tracking
+    sudo make && sudo make install
+    sudo mkdir -p /etc/slurm
+    cd /etc/slurm
+    sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .
+    sudo nano slurm.conf
+    ControlMachine=alpine-slurmctl1.rc.int.colorado.edu
+    BackupController=alpine-slurmctl2.rc.int.colorado.edu
 
 #. Edit ``/etc/default/useradd`` -> ``SHELL=/bin/sh`` to ``SHELL=bin/bash``
-#. ``sudo groupadd -g 515 slurm``
-#. ``sudo useradd -u 515 -g 515 slurm``
+
+  .. code-block:: bash
+     sudo groupadd -g 515 slurm
+     sudo useradd -u 515 -g 515 slurm
 #. Log onto RC:
 
    - ``id -u $USER`` -> record
