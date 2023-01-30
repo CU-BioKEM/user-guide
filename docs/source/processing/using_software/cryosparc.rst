@@ -113,13 +113,10 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 #. ``sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make``
 #. Install SLURM
 
+  	- Log onto login node
+  	- ``ml slurm/alpine``
+  	- ``sbatch --version`` -> check version
     -	cd /opt
-		- Check alpine's slurm version
-
-  		* Log onto login node
-  		* ``ml slurm/alpine``
-  		* ``sbatch --version``
-
 		- ``sudo git clone -b slurm-22.05 https://github.com/SchedMD/slurm.git``
 		- ``cd slurm``
 		- ``sudo ./configure --with-jwt --disable-dependency-tracking``
@@ -128,9 +125,8 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 		- ``cd /etc/slurm``
 		- ``sudo scp <user>@login.rc.colorado.edu:/curc/slurm/alpine/etc/slurm.conf .``
 		- ``sudo nano slurm.conf``
-    
-  		* edit to ``ControlMachine=alpine-slurmctl1.rc.int.colorado.edu``
-  		* edit to ``BackupController=alpine-slurmctl2.rc.int.colorado.edu``
+    - edit to ``ControlMachine=alpine-slurmctl1.rc.int.colorado.edu``
+  	- edit to ``BackupController=alpine-slurmctl2.rc.int.colorado.edu``
 
 add lab admin's RSA key
 
