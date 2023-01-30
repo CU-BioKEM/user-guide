@@ -114,6 +114,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
 
   sudo apt-get update
   sudo apt install -y libmysqlclient-dev libjwt-dev munge gcc make
+  
 #. Check SLURM version (on RC):
 .. code-block:: bash
 
