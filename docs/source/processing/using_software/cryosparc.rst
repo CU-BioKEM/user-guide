@@ -225,6 +225,7 @@ Follow `instructions <https://guide.cryosparc.com/setup-configuration-and-manage
 
 Edit ``run_installer.sh`` and run
 Edit ``ip_address.sh`` to correct IP and run
+Edit ``run_first_user.sh`` and run
 
 .. code-block:: bash
 
@@ -232,6 +233,7 @@ Edit ``ip_address.sh`` to correct IP and run
   cryosparcm restart
   cd alpine
   cryosparcm cluster connect
+
 
 .. _Cryoworker:
 
