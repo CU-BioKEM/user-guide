@@ -24,10 +24,10 @@ time. However, you will be able to add new users. To do this:
      - Let's store these in lab PL or projects (you do not want to swap this for your own key)
      - Have user run ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
 
-  #. Add their curc.pub key to the VM ``cat <user>_curc.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'``
+  #. Add their curc.pub key to the VM ``cat <user>_curc.pub | ssh -o KexAlgorithms=ecdh-sha2-nistp521 <use>r@<IP> 'cat >> .ssh/authorized_keys'``
   #. Add them in the GUI as normal
 
-**The first step is necessary to allow the user to generate new tokens that needs
+**The first two steps are necessary to allow the user to generate new tokens that needs
 Cryosparc to submit jobs to SLURM. Without doing this, they will only be able to
 submit jobs within 24hrs of someone who has token access logging onto CURC**
 
