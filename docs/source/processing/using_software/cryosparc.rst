@@ -31,7 +31,7 @@ submit jobs within 24hrs of someone who has token access logging onto CURC.**
 
 You should be able to run ``cryosparcm`` commands as normal, although I have not
 tested updating. You may have to go into the cryosparc_worker directory and
-that manually.
+update it manually.
 
 .. _List of ports:
 
