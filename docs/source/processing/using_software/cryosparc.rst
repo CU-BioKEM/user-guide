@@ -15,9 +15,7 @@ you need to do to run it is:
 
 Lab admins
 ----------
-Due to the nature of integrating cryosparc into CURC's environment, updating
-versions or doing many other administrative tasks will not be supported at this
-time. However, you will be able to add new users. To do this:
+To add new users:
 
   #. Have the user send their curc.pub key
 
@@ -30,6 +28,10 @@ time. However, you will be able to add new users. To do this:
 **The first two steps are necessary to allow the user to generate new tokens that needs
 Cryosparc to submit jobs to SLURM. Without doing this, they will only be able to
 submit jobs within 24hrs of someone who has token access logging onto CURC**
+
+You should be able to run ``cryosparcm`` commands as normal, although I have not
+ tested updating. You may have to go into the cryosparc_worker directory and
+that manually.
 
 .. _List of ports:
 
@@ -289,3 +291,14 @@ These will give users from each labs access to their specific Cryosparc builds.
                  echo "export SLURM_CONF=/etc/slurm/slurm.conf" >> ~/.slurm_token ;
                  scp -o KexAlgorithms=ecdh-sha2-nistp521 ~/.slurm_token <admin>@<IP>:~/cryosparc_setup/export_tok$
                  firefox http://<IP>:<base port>'
+
+#. Make admin functions
+  - .. code-block:: bash
+
+      for USER in $(users)
+        do
+        if [ "$USER" == "<admin>" ]; then
+          alias cryosparcm='ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "/home/<user>/cryosparc/cryosparc_master/bin/cryosparcm ${1}"'
+          alias cryosparc-add-key='cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "cat >> .ssh/authorized_keys"'
+        fi
+        done
