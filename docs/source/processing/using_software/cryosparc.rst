@@ -285,7 +285,7 @@ These will give users from each labs access to their specific Cryosparc builds.
         #cryosparc
         alias cryosparc='export SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf ;
                  echo -n "export " > ~/.slurm_token ;
-                 scontrol token lifespan=86400 > ~/.slurm_token ;
-                 echo -n "export SLURM_CONF=/etc/slurm/slurm.conf" >> ~/.slurm_token ;
+                 scontrol token lifespan=86400 >> ~/.slurm_token ;
+                 echo "export SLURM_CONF=/etc/slurm/slurm.conf" >> ~/.slurm_token ;
                  scp -o KexAlgorithms=ecdh-sha2-nistp521 ~/.slurm_token <admin>@<IP>:~/cryosparc_setup/export_tok$
                  firefox http://<IP>:<base port>'
