@@ -236,10 +236,19 @@ Log onto RC
 
 .. code-block:: bash
 
-  export <$LICENSE_ID>
+  git clone https://github.com/CU-BioKEM/cryosparc_setup.git
+  source cryosparc_setup/license.src
   curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
-  tar-xf *gz
+  tar -xf *gz
 
+.. code-block:: bash
+
+  ssh login10
+  ml slurm/alpine
+  ainteractive
+  ml cuda/11.4
+
+Edit ``run_worker_install.sh`` and run
 
 .. _Cryo aliases:
 
