@@ -247,8 +247,9 @@ Log onto RC
   ml slurm/alpine
   ainteractive
   ml cuda/11.4
-
-Edit ``run_worker_install.sh`` and run
+  cd cryosparc_setup
+  ./run_worker_install.sh
+  echo "export CRYOSPARC_SSD_PATH=\$SLURM_SCRATCH" >> ../cryosparc_worker/config.sh
 
 .. _Cryo aliases:
 
