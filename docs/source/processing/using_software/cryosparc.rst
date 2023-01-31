@@ -260,6 +260,14 @@ Log onto RC
   ./run_worker_install.sh
   echo "export CRYOSPARC_SSD_PATH=\$SLURM_SCRATCH" >> ../cryosparc_worker/config.sh
 
+Open new terminal
+
+.. code-block:: bash
+
+  cryosparc
+
+Login and try to test it out. **Make sure you make all projects in PL**
+
 .. _Cryo aliases:
 
 Create CURC aliases
