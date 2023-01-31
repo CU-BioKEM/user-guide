@@ -27,10 +27,10 @@ To add new users:
 
 **The first two steps are necessary to allow the user to generate new tokens that needs
 Cryosparc to submit jobs to SLURM. Without doing this, they will only be able to
-submit jobs within 24hrs of someone who has token access logging onto CURC**
+submit jobs within 24hrs of someone who has token access logging onto CURC.**
 
 You should be able to run ``cryosparcm`` commands as normal, although I have not
- tested updating. You may have to go into the cryosparc_worker directory and
+tested updating. You may have to go into the cryosparc_worker directory and
 that manually.
 
 .. _List of ports:
