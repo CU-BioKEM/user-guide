@@ -273,7 +273,7 @@ These will give users from each labs access to their specific Cryosparc builds.
         do
         if [ "$USER" == "<admin>" ]; then
           alias cryosparcm='ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "/home/<user>/cryosparc/cryosparc_master/bin/cryosparcm ${1}"'
-          alias cryosparc-add-key='cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "cat >> .ssh/authorized_keys"'
+          export PATH=/projects/biokem/software/biokem/users/src/lab_specific/luger:"$PATH"
         fi
         done
 
