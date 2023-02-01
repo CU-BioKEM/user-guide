@@ -22,44 +22,16 @@ To add new users:
      - Let's store these in lab PL or projects (you do not want to swap this for your own key)
      - Have user run ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
 
-  #. Add their curc.pub key to the VM ``cat <user>_curc.pub | ssh -o KexAlgorithms=ecdh-sha2-nistp521 <use>r@<IP> 'cat >> .ssh/authorized_keys'``
+  #. Add their curc.pub key to the VM ``cryosparc-add-key <user_curc.pub>``
   #. Add them in the GUI as normal
 
-**The first two steps are necessary to allow the user to generate new tokens that needs
-Cryosparc to submit jobs to SLURM. Without doing this, they will only be able to
-submit jobs within 24hrs of someone who has token access logging onto CURC.**
+**The first two steps are necessary to allow the user to generate new tokens that
+CryoSPARC needs to submit jobs to SLURM. Without doing this, they will only be
+able to submit jobs within 24hrs of someone who has token access logging in.**
 
 You should be able to run ``cryosparcm`` commands as normal, although I have not
 tested updating. You may have to go into the cryosparc_worker directory and
 update it manually.
-
-.. _List of ports:
-
-List of ports
--------------
-To access Cryosparc port forwarding is necessary. To avoid getting the wrong
-forward, each lab will have their own set of ports listed below. You do not need
- to do anything with these, this is for IT housekeeping purposes only.
-
-  +-------------+------------------+
-  | Ports       | Lab              |
-  +-------------+------------------+
-  | 39000-39009 | Luger            |
-  +-------------+------------------+
-  | 39010-39019 | Sousa            |
-  +-------------+------------------+
-  | 39020-39029 | Whiteley (Aaron) |
-  +-------------+------------------+
-  | 39030-39039 | Kasinath         |
-  +-------------+------------------+
-  | 39040-39049 | Aydin            |
-  +-------------+------------------+
-  | 39050-39059 | Cech             |
-  +-------------+------------------+
-  | 39060-39069 | Wuttke           |
-  +-------------+------------------+
-  | 39070-39079 | Taatjes          |
-  +-------------+------------------+
 
 .. _Setup:
 
@@ -279,10 +251,11 @@ specific aliases in ``/projects/biokem/software/biokem/users/src/lab_specific``.
 These will give users from each labs access to their specific Cryosparc builds.
 
 #. Edit cryosparc_vms.src to add easy access to VM ``alias <lab>-cryosparc-vm="ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>"`` (only gives access to BioKEM IT)
+#. ``mkdir /projects/biokem/software/biokem/users/src/lab_specific/<lab>``
 #. Update ``/projects/biokem/software/biokem/users/src/lab_specific/labs.src`` with new lab group
-#. Make lab specific functions
-  - ``touch <lab>lab.src``
-  -   .. code-block:: bash
+#. Make lab specific functions: ``touch <lab>lab.src``
+
+     .. code-block:: bash
 
         #cryosparc
         alias cryosparc='export SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf ;
@@ -293,7 +266,8 @@ These will give users from each labs access to their specific Cryosparc builds.
                  firefox http://<IP>:<base port>'
 
 #. Make admin functions
-  - .. code-block:: bash
+
+   .. code-block:: bash
 
       for USER in $(users)
         do
@@ -302,3 +276,13 @@ These will give users from each labs access to their specific Cryosparc builds.
           alias cryosparc-add-key='cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "cat >> .ssh/authorized_keys"'
         fi
         done
+
+#. Make ``cryosparc-add-key`` executable
+
+   .. code-block:: bash
+
+      !#/bin/bash
+
+      IP=10.225.227.249
+      USER=shla9937
+      cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 ${USER}@${IP} 'cat >> .ssh/authorized_keys'
