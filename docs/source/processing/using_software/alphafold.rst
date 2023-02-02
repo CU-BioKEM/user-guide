@@ -95,6 +95,7 @@ all for you called ``alphafold-predict``. If you've set up your environment corr
 
   #. Log on to OpenOnDemand (see :doc:`../logging_on`)
   #. Start an interactive session ``biokem-interactive``
+  #. Start conda environment ``conda activate alphafold``
   #. Make your :ref:`Input file`
   #. Run ``alphafold-predict``
 
