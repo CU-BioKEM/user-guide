@@ -44,6 +44,17 @@ file in fasta format.
     GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
     KEAAEENRALAKLHHELAIVED
 
+    example multimer fasta:
+
+  .. code-block:: bash
+
+    >T1083
+    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
+    KEAAEENRALAKLHHELAIVED
+    >T1083
+    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
+    KEAAEENRALAKLHHELAIVED
+
 .. _Running alphafold:
 
 Set up your conda environment
@@ -64,10 +75,10 @@ We will follow RC's `instructions <https://curc.readthedocs.io/en/latest/softwar
 
     .. code-block:: bash
 
-        pkgs_dirs:
-      - /projects/$USER/.conda_pkgs
+      pkgs_dirs:
+        - /projects/$USER/.conda_pkgs
       envs_dirs:
-      - /projects/$USER/software/anaconda/envs
+        - /projects/$USER/software/anaconda/envs
 
   #. Create a conda environment and install proper packages:
 
@@ -94,8 +105,10 @@ all for you called ``alphafold-predict``. If you've set up your environment corr
 ``biokem-interactive`` session.
 
   #. Log on to OpenOnDemand (see :doc:`../logging_on`)
+  #. Load anaconda ``ml anaconda``
   #. Start an interactive session ``biokem-interactive``
   #. Start conda environment ``conda activate alphafold``
+  #. Navigate to your working directory (usually ``/pl/active/<yourlab>``)
   #. Make your :ref:`Input file`
   #. Run ``alphafold-predict``
 
