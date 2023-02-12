@@ -36,6 +36,7 @@ Check the status of your job:
       squeue -u $USER
 
 Check the output of alphafold (it writes to the error file):
+
 **If it was the most recent job you submitted, you can omit the jobid argument.**
 
     .. code-block:: bash
