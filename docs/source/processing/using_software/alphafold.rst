@@ -17,9 +17,9 @@ If you've set up your environment correctly (see :doc:`../configure`),
   #. Log on to OpenOnDemand (see :doc:`../logging_on`)
   #. Start an interactive session:
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      biokem-interactive
+        biokem-interactive
 
   #. Navigate to your working directory (usually ``/pl/active/<yourlab>``)
   #. Make your :ref:`Input file`
