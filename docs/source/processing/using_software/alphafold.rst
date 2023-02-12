@@ -17,9 +17,9 @@ If you've set up your environment correctly (see :doc:`../configure`),
   #. Log on to OpenOnDemand (see :doc:`../logging_on`)
   #. Start an interactive session:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    biokem-interactive
+      biokem-interactive
 
   #. Navigate to your working directory (usually ``/pl/active/<yourlab>``)
   #. Make your :ref:`Input file`
@@ -36,12 +36,12 @@ Check the status of your job:
     squeue -u $USER
 
 Check the output of alphafold (it writes to the error file):
+**If it was the most recent job you submitted, you can omit the jobid argument.**
 
   .. code-block:: bash
 
     slurm-err <jobid>
 
-**If it was the most recent job you submitted, you can omit the jobid argument.**
 
 .. _Under the hood:
 
