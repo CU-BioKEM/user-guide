@@ -25,22 +25,22 @@ If you've set up your environment correctly (see :doc:`../configure`),
   #. Make your :ref:`Input file`
   #. Run:
 
-  .. code-block:: bash
+      .. code-block:: bash
 
-    alphafold-predict <your_fasta.fa>
+        alphafold-predict <your_fasta.fa>
 
 Check the status of your job:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    squeue -u $USER
+      squeue -u $USER
 
 Check the output of alphafold (it writes to the error file):
 **If it was the most recent job you submitted, you can omit the jobid argument.**
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    slurm-err <jobid>
+      slurm-err <jobid>
 
 
 .. _Under the hood:
@@ -65,22 +65,22 @@ file in fasta format.
 
     example fasta:
 
-  .. code-block:: bash
+        .. code-block:: bash
 
-    >T1083
-    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
-    KEAAEENRALAKLHHELAIVED
+          >T1083
+          GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
+          KEAAEENRALAKLHHELAIVED
 
     example multimer fasta:
 
-  .. code-block:: bash
+        .. code-block:: bash
 
-    >T1083
-    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
-    KEAAEENRALAKLHHELAIVED
-    >T1083
-    GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
-    KEAAEENRALAKLHHELAIVED
+          >T1083
+          GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
+          KEAAEENRALAKLHHELAIVED
+          >T1083
+          GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
+          KEAAEENRALAKLHHELAIVED
 
 .. _Database:
 
@@ -103,27 +103,27 @@ for reference (based on `CURC instructions <https://curc.readthedocs.io/en/lates
 
   #. Edit your ``.condarc`` file
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      nano ~/.condarc
+        nano ~/.condarc
 
   #. Add these lines to it (the script will look here for the alphafold environment):
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      pkgs_dirs:
-        - /projects/$USER/.conda_pkgs
-      envs_dirs:
-        - /projects/$USER/software/anaconda/envs
+        pkgs_dirs:
+          - /projects/$USER/.conda_pkgs
+        envs_dirs:
+          - /projects/$USER/software/anaconda/envs
 
   #. Create a conda environment and install proper packages:
 
-    .. code-block:: bash
+      .. code-block:: bash
 
-      ml anaconda
-      conda create -n alphafold
-      conda activate alphafold
-      conda install -c nvidia cuda-nvcc
+        ml anaconda
+        conda create -n alphafold
+        conda activate alphafold
+        conda install -c nvidia cuda-nvcc
 
 .. Alpha submission:
 
