@@ -8,23 +8,50 @@ particular residues are to be close to each other in 3D space.
 SBGrid packages Alphafold for us
 (`see here <https://sbgrid.org/wiki/examples/alphafold2>`_)
 
-To run Alphafold:
+Running alphafold
+-----------------
+If you've set up your environment correctly (see :doc:`../configure`),
+``alphafold-predict`` should be in your path and will work if you are in a
+``biokem-interactive`` session.
 
-.. _Database:
+  #. Log on to OpenOnDemand (see :doc:`../logging_on`)
+  #. Start an interactive session:
 
-Database
---------
-The first thing we need to run Alphafold is the extensive database. This
-database is over 2TB in size and takes a prohibitively long time to download on
-RC infrastructure. I have downloaded it and place it in
-``/pl/active/BioKEM/software/alphafolddb`` (you should be able to read this
-location, but won't be able to update it.). **Don't attempt to download this
-database on your own, use this one.**
+  .. code-block:: bash
+
+    biokem-interactive
+
+  #. Navigate to your working directory (usually ``/pl/active/<yourlab>``)
+  #. Make your :ref:`Input file`
+  #. Run:
+
+  .. code-block:: bash
+
+    alphafold-predict <your_fasta.fa>
+
+Check the status of your job:
+
+  .. code-block:: bash
+
+    squeue -u $USER
+
+Check the output of alphafold (it writes to the error file):
+
+  .. code-block:: bash
+
+    slurm-err <jobid>
+
+**If it was the most recent job you submitted, you can omit the jobid argument.**
+
+.. _Under the hood:
+
+Under the hood
+--------------
 
 .. _Input file:
 
 Input file
-----------
+~~~~~~~~~~
 The only input you need to run Alphafold is your sequence(s) of interest in a
 file in fasta format.
 
@@ -55,23 +82,32 @@ file in fasta format.
     GAMGSEIEHIEEAIANAKTKADHERLVAHYEEEAKRLEKKSEEYQELAKVYKKITDVYPNIRSYMVLHYQNLTRRY
     KEAAEENRALAKLHHELAIVED
 
-.. _Running alphafold:
+.. _Database:
 
-Set up your conda environment
------------------------------
-In order to run Alphafold, we need to install an older NVIDIA driver. To do this,
-we will use conda. You'll need to build your conda environment the first time,
-but then you'll simply need to active it the next time (included in directions).
-We will follow RC's `instructions <https://curc.readthedocs.io/en/latest/software/python.html?highlight=conda#using-conda>`_.
+Database
+~~~~~~~~
+The Alphafold database is over 2TB in size and takes a prohibitively long time
+to download on RC infrastructure. I have downloaded it and place it in
+``/pl/active/BioKEM/software/alphafolddb`` (you should be able to read this
+location, but won't be able to update it.). **Don't attempt to download this
+database on your own, use this one (the script does this for you).**
 
-  #. Log on to OpenOnDemand (see :doc:`../logging_on`)
+.. _Alphafold conda environment:
+
+Alphafold conda environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In order to run Alphafold, we need a few libraries for the NVIDIA drivers. The
+``alphafold-predict`` script sets these up for you. But here's what's going on,
+for reference (based on `CURC instructions <https://curc.readthedocs.io/en/latest/software/python.html?highlight=conda#using-conda>`_.
+**You do not need to do this, it's handled by the script.**
+
   #. Edit your ``.condarc`` file
 
     .. code-block:: bash
 
       nano ~/.condarc
 
-  #. Add these lines to it:
+  #. Add these lines to it (the script will look here for the alphafold environment):
 
     .. code-block:: bash
 
@@ -89,43 +125,14 @@ We will follow RC's `instructions <https://curc.readthedocs.io/en/latest/softwar
       conda activate alphafold
       conda install -c nvidia cuda-nvcc
 
-  #. For reference, to get out of your conda environment later:
+.. Alpha submission:
 
-    .. code-block:: bash
-
-      conda deactivate alphafold
-
-
-Running alphafold
------------------
-After creating our conda environment, to run alphafold, we will need to submit a
-job to ``sbatch`` requesting GPUs. I've created a command that should handle this
-all for you called ``alphafold-predict``. If you've set up your environment correctly
-(see :doc:`../configure`), this should be in your path and will work if you are in a
-``biokem-interactive`` session.
-
-  #. Log on to OpenOnDemand (see :doc:`../logging_on`)
-  #. Load anaconda ``ml anaconda``
-  #. Start an interactive session ``biokem-interactive``
-  #. Start conda environment ``conda activate alphafold``
-  #. Navigate to your working directory (usually ``/pl/active/<yourlab>``)
-  #. Make your :ref:`Input file`
-  #. Run ``alphafold-predict``
-
-    .. code-block:: bash
-
-      Alphafold script usage:
-        alphafold-predict --monomer <fasta.fa>
-        alphafold-predict --multimer <fasta.fa>
-
-      If folding large >1,200aa, use:
-        alphafold-predict --monomer <fasta.fa> --large
-        alphafold-predict --multimer <fasta.fa> --large
-
+Submission script
+~~~~~~~~~~~~~~~~~
 This is the sbatch script that is actually being submitting for you:
 ``/projects/biokem/software/biokem/users/example_sbatch_scripts/alphafold/predict_monomer.q``
-(There are few variations on this script in that fold for multimers and large
-proteins, the alphafold-predict options will submit those when specified)
+(There are few variations on this script in that folder for multimers and large
+proteins, alphafold-predict will submit those for you).
 
   .. code-block:: bash
 
@@ -135,7 +142,7 @@ proteins, the alphafold-predict options will submit those when specified)
     #SBATCH --account=blanca-biokem
     #SBATCH --job-name=alphafold_predict
     #SBATCH --nodes=1
-    #SBATCH --ntasks=16
+    #SBATCH --ntasks=10
     #SBATCH --mem=64gb
     #SBATCH --gres=gpu:1
     #SBATCH --time=24:00:00
@@ -144,9 +151,11 @@ proteins, the alphafold-predict options will submit those when specified)
 
     #Path to fasta file, needs each monomer as own chain
     FASTA=$1
-    echo "Predicting monomer for file: $1"
+    echo "Predicting monomer for file: ${FASTA}"
 
     #Run this inside SBGrid environment
+    ml anaconda
+    conda activate alphafold
     source /programs/sbgrid.shrc
 
     #set to Alphafold 2.3.1 (database needs to be updated if changed)
@@ -174,8 +183,8 @@ proteins, the alphafold-predict options will submit those when specified)
 Known errors
 ------------
 
-Our conda environment installs an older NVIDIA driver which will disable parallel
-compilation and through the following warning, but let you proceed:
+Our conda environment installs a newer NVIDIA driver which will disable parallel
+compilation and through the following warning, but lets you proceed:
 
   .. code-block:: bash
 
@@ -185,7 +194,7 @@ compilation and through the following warning, but let you proceed:
     DIA-provided CUDA forward compatibility packages.
 
 
-Running Alphafold without building Conda first (either for a monomer or multimer)
+Running Alphafold without building conda first (either for a monomer or multimer)
 will result in the following error after about 40 minutes:
 
   .. code-block:: bash
