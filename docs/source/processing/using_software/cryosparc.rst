@@ -32,12 +32,6 @@ get to play with CURC infrastructure, but it can be done. Here, we will:
 
    - :ref:`Express setup`
    - :ref:`Full setup`
-   - :ref:`VM`
-   - :ref:`SLURM integration`
-   - :ref:`Mount PL`
-   - :ref:`Cryomaster`
-   - :ref:`Cryoworker`
-   - :ref:`Cryo aliases`
 
 .. _Express setup:
 
@@ -48,6 +42,13 @@ Express setup
 
 Full setup
 """"""""""
+
+    - :ref:`VM`
+    - :ref:`SLURM integration`
+    - :ref:`Mount PL`
+    - :ref:`Cryomaster`
+    - :ref:`Cryoworker`
+    - :ref:`Cryo aliases`
 
 .. _VM:
 
