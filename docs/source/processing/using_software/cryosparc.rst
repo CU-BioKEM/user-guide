@@ -3,32 +3,23 @@ Cryosparc
 
 .. _General users:
 
+*The SLURM token allowing submission to all CryoSPARC instances setup through
+BioKEM will expire in early 2028. This will prevent all instances from
+submitting jobs to the cluster.*
+
 General users
 -------------
 Once your lab has set up a Cryosparc installation with the BioKEM IT person, all
 you need to do to run it is:
 
   #. Log on to OpenOnDemand (:doc:`../logging_on`)
+  #. Open terminal
   #. Run the command ``cryosparc``
 
 .. _Lab admins:
 
 Lab admins
 ----------
-To add new users:
-
-  #. Have the user send their curc.pub key
-
-     - Let's store these in lab PL or projects (you do not want to swap this for your own key)
-     - Have user run ``cp ~/.ssh/curc.pub <path to shared storage location>/$USER_curc.pub``
-
-  #. Add their curc.pub key to the VM ``cryosparc-add-key <user_curc.pub>``
-  #. Add them in the GUI as normal
-
-**The first two steps are necessary to allow the user to generate new tokens that
-CryoSPARC needs to submit jobs to SLURM. Without doing this, they will only be
-able to submit jobs within 24hrs of someone who has token access logging in.**
-
 You should be able to run ``cryosparcm`` commands as normal, although I have not
 tested updating. Please don't attempt to update until I have tested it out.
 
