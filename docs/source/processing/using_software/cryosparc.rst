@@ -227,6 +227,7 @@ But we need to make a few important changes for this to work.
 #. Edit ``run_installer.sh`` and run
 #. Edit ``ip_address.sh`` to correct IP and run
 #. Run ``cluster_fix.sh``
+#. Edit config to include ``export CRYOSPARC_DISABLE_IMPORT_ON_MASTER=true``
 #. Start cryosparc
 
     .. code-block:: bash
