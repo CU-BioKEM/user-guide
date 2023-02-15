@@ -335,13 +335,3 @@ These will give users from each labs access to their specific Cryosparc builds.
             export PATH=/projects/biokem/software/biokem/users/src/lab_specific/<lab>:"$PATH"
           fi
           done`
-
-#. Make ``cryosparc-add-key`` executable
-
-     .. code-block:: bash
-
-        !#/bin/bash
-
-        IP=<IP>
-        USER=biokem
-        cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 ${USER}@${IP} 'cat >> .ssh/authorized_keys'
