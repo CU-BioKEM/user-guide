@@ -30,12 +30,24 @@ Setup (facility use only)
 **Do not attempt to do this on your own.** Cryosparc is a pain in the butt to
 get to play with CURC infrastructure, but it can be done. Here, we will:
 
+   - :ref:`Express setup`
+   - :ref:`Full setup`
    - :ref:`VM`
    - :ref:`SLURM integration`
    - :ref:`Mount PL`
    - :ref:`Cryomaster`
    - :ref:`Cryoworker`
    - :ref:`Cryo aliases`
+
+.. _Express setup:
+
+Express setup
+"""""""""""""
+
+.. _Full setup:
+
+Full setup
+""""""""""
 
 .. _VM:
 
@@ -166,9 +178,9 @@ Now we need to mount the lab's PetaLibrary to the VM, according to CURC's
     .. code-block:: bash
 
       #User lab PL
-      biokem@dtn.rc.int.colorado.edu:/pl/active/aaronwhiteleylab /pl/active/aaronwhiteleylab fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
+      biokem@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab> fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
       #User lab cryosparc worker
-      biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/aaronwhiteley /pl/active/BioKEM/software/cryosparc/aaronwhiteley fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
+      biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/<lab> /pl/active/BioKEM/software/cryosparc/<lab> fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
 
 #. If you want to mount manually:
 
@@ -184,7 +196,7 @@ Install 'master' Cryosparc
 Install the 'master' Cryosparc on the VM use their `instructions <https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/downloading-and-installing-cryosparc>`_.
 But we need to make a few important changes for this to work.
 
-#.Bring in presets
+#. Bring in presets
 
     .. code-block:: bash
 
