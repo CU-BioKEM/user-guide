@@ -146,27 +146,36 @@ Now we need to mount the lab's PetaLibrary to the VM, according to CURC's
 
 #. Set up directories
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  exit
-  sudo apt-get install sshfs
-  sudo mkdir -p /pl/active/<lab's PL>
-  sudo mkdir -p /pl/active/BioKEM/software/cryosparc/<lab>
-  sudo chmod -R o+w /pl
+      exit
+      sudo apt-get install sshfs
+      sudo mkdir -p /pl/active/<lab's PL>
+      sudo mkdir -p /pl/active/BioKEM/software/cryosparc/<lab>
+      sudo chmod -R o+w /pl
 
 #. Make key pair on VM
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  ssh-keygen -t ed25519
+      ssh-keygen -t ed25519
 
 #. Add key to biokem on RC
-#. Mount directories
+#. Mount directories through fstab
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  sudo sshfs -o allow_other,IdentityFile=/home/ubuntu/.ssh/cryo biokem@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab>
-  sudo sshfs -o allow_other,IdentityFile=/home/ubuntu/.ssh/cryo biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/<lab> /pl/active/BioKEM/software/cryosparc/<lab>
+      #User lab PL
+      biokem@dtn.rc.int.colorado.edu:/pl/active/aaronwhiteleylab /pl/active/aaronwhiteleylab fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
+      #User lab cryosparc worker
+      biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/aaronwhiteley /pl/active/BioKEM/software/cryosparc/aaronwhiteley fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
+
+#. If you want to mount manually:
+
+    .. code-block:: bash
+
+      sudo sshfs -o allow_other,IdentityFile=/home/ubuntu/.ssh/cryo biokem@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab>
+      sudo sshfs -o allow_other,IdentityFile=/home/ubuntu/.ssh/cryo biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/<lab> /pl/active/BioKEM/software/cryosparc/<lab>
 
 .. _Cryomaster:
 
@@ -177,39 +186,41 @@ But we need to make a few important changes for this to work.
 
 #.Bring in presets
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  sudo su biokem
-  cd
-  git clone https://github.com/CU-BioKEM/cryosparc_setup.git
-  cd cryosparc_setup
-  nano license.src -> export LICENSE_ID=" "
-  mkdir ~/cryosparc
-  cd ~/cryosparc
+      sudo su biokem
+      cd
+      git clone https://github.com/CU-BioKEM/cryosparc_setup.git
+      cd cryosparc_setup
+      nano license.src -> export LICENSE_ID=" "
+      mkdir ~/cryosparc
+      cd ~/cryosparc
 
 #. Follow `instructions <https://guide.cryosparc.com/setup-configuration-and-management/how-to-download-install-and-configure/downloading-and-installing-cryosparc>`_
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  source ../cryosparc_setup/license.src
-  curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
-  tar -xf *gz
-  cd ../cryosparc_setup
+      source ../cryosparc_setup/license.src
+      curl -L https://get.cryosparc.com/download/master-latest/$LICENSE_ID -o cryosparc_master.tar.gz
+      tar -xf *gz
+      cd ../cryosparc_setup
 
 #. Edit ``run_installer.sh`` and run
 #. Edit ``ip_address.sh`` to correct IP and run
 #. Start cryosparc
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  source ~/.bashrc
-  cryosparcm restart
+      source ~/.bashrc
+      cryosparcm restart
 
 #. Connect cluster
 
-  cd alpine
-  nano cluster_info.json -> edit to correct worker bin path
-  cryosparcm cluster connect
+    .. code-block:: bash
+
+      cd alpine
+      nano cluster_info.json -> edit to correct worker bin path
+      cryosparcm cluster connect
 
 #. Edit ``run_first_user.sh`` and run
 
@@ -219,60 +230,60 @@ Install 'worker' Cryosparc
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that we've installed the 'master' instance, we can install the worker on Alpine.
 
-Log onto RC
+#. Log onto RC
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  ssh login10
-  cd /pl/active/BioKEM/software/cryosparc
+      ssh login10
+      cd /pl/active/BioKEM/software/cryosparc
 
-Make a new directory for each lab
+#. Make a new directory for each lab
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  sudo -u biokem mkdir <labname>
-  cd <labname>
+      sudo -u biokem mkdir <labname>
+      cd <labname>
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  git clone https://github.com/CU-BioKEM/cryosparc_setup.git
-  cd cryosparc_setup
+      git clone https://github.com/CU-BioKEM/cryosparc_setup.git
+      cd cryosparc_setup
 
-Edit license.src to add correct CryoSPARC license
+#. Edit license.src to add correct CryoSPARC license
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  nano license.src
+      nano license.src
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  cd ..
-  source cryosparc_setup/license.src
-  curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
-  tar -xf *gz
+      cd ..
+      source cryosparc_setup/license.src
+      curl -L https://get.cryosparc.com/download/worker-latest/$LICENSE_ID -o cryosparc_worker.tar.gz
+      tar -xf *gz
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  ssh login10
-  ml slurm/alpine
-  ainteractive
-  ml cuda/11.4
-  cd cryosparc_setup
+      ssh login10
+      ml slurm/alpine
+      ainteractive
+      ml cuda/11.4
+      cd cryosparc_setup
 
-Edit ``run_worker_install.sh``
+#. Edit ``run_worker_install.sh``
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  ./run_worker_install.sh
-  echo "export CRYOSPARC_SSD_PATH=\$SLURM_SCRATCH" >> ../cryosparc_worker/config.sh
+      ./run_worker_install.sh
+      echo "export CRYOSPARC_SSD_PATH=\$SLURM_SCRATCH" >> ../cryosparc_worker/config.sh
 
-Open new terminal
+#. Open new terminal
 
-.. code-block:: bash
+    .. code-block:: bash
 
-  cryosparc
+      cryosparc
 
-Login and try to test it out. **Make sure you make all projects in PL**
+    Login and try to test it out. **Make sure you make all projects in PL**
 
 .. _Cryo aliases:
 
@@ -299,22 +310,22 @@ These will give users from each labs access to their specific Cryosparc builds.
 
 #. Make admin functions
 
-   .. code-block:: bash
+     .. code-block:: bash
 
-      for USER in $(users)
-        do
-        if [ "$USER" == "<admin>" ]; then
-          alias cryosparcm='ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "/home/<user>/cryosparc/cryosparc_master/bin/cryosparcm ${1}"'
-          export PATH=/projects/biokem/software/biokem/users/src/lab_specific/luger:"$PATH"
-        fi
-        done
+        for USER in $(users)
+          do
+          if [ "$USER" == "<admin>" ]; then
+            alias cryosparcm='ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "/home/<user>/cryosparc/cryosparc_master/bin/cryosparcm ${1}"'
+            export PATH=/projects/biokem/software/biokem/users/src/lab_specific/luger:"$PATH"
+          fi
+          done`
 
 #. Make ``cryosparc-add-key`` executable
 
-   .. code-block:: bash
+     .. code-block:: bash
 
-      !#/bin/bash
+        !#/bin/bash
 
-      IP=<IP>
-      USER=biokem
-      cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 ${USER}@${IP} 'cat >> .ssh/authorized_keys'
+        IP=<IP>
+        USER=biokem
+        cat ${1} | ssh -o KexAlgorithms=ecdh-sha2-nistp521 ${USER}@${IP} 'cat >> .ssh/authorized_keys'
