@@ -1,5 +1,5 @@
-Specific software
-=================
+Using software
+==============
 
 The Blanca cluster is managed by a `SLURM <https://slurm.schedmd.com>`_ system, which queues jobs from all users 
 and runs them when resources become available. There are two ways to run software on the cluster:
