@@ -28,7 +28,7 @@ tested updating. Please don't attempt to update until I have tested it out.
 Setup (facility use only)
 -------------------------
 **Do not attempt to do this on your own.** Cryosparc is a pain in the butt to
-get to play with CURC infrastructure, but it can be done. Here, we will:
+get to play with CURC infrastructure, but it can be done.
 
    - :ref:`Express setup`
    - :ref:`Full setup`
