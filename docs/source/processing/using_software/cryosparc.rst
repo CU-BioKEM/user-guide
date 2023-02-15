@@ -38,6 +38,12 @@ get to play with CURC infrastructure, but it can be done. Here, we will:
 Express setup
 """""""""""""
 
+#. Make instance from ``cryosparc-base`` snapshot (:ref:`VM`)
+#. Edit ``fstab`` on VM (:ref:`Mount PL`)
+#. Delete and reinstall master (:ref:`Cryomaster`)
+#. Install worker (:ref:`Cryoworker`)
+#. Set aliases (:ref:`Cryo aliases`)
+
 .. _Full setup:
 
 Full setup
@@ -220,6 +226,7 @@ But we need to make a few important changes for this to work.
 
 #. Edit ``run_installer.sh`` and run
 #. Edit ``ip_address.sh`` to correct IP and run
+#. Run ``cluster_fix.sh``
 #. Start cryosparc
 
     .. code-block:: bash
@@ -314,12 +321,7 @@ These will give users from each labs access to their specific Cryosparc builds.
      .. code-block:: bash
 
         #cryosparc
-        alias cryosparc='export SLURM_CONF=/curc/slurm/alpine/etc/slurm.conf ;
-                 echo -n "export " > ~/.slurm_token ;
-                 scontrol token lifespan=86400 >> ~/.slurm_token ;
-                 echo "export SLURM_CONF=/etc/slurm/slurm.conf" >> ~/.slurm_token ;
-                 scp -o KexAlgorithms=ecdh-sha2-nistp521 ~/.slurm_token <admin>@<IP>:~/cryosparc_setup/export_tok$
-                 firefox http://<IP>:<base port>'
+        alias cryosparc='firefox http://<IP>:<base_port>'
 
 #. Make admin functions
 
@@ -329,7 +331,7 @@ These will give users from each labs access to their specific Cryosparc builds.
           do
           if [ "$USER" == "<admin>" ]; then
             alias cryosparcm='ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "/home/<user>/cryosparc/cryosparc_master/bin/cryosparcm ${1}"'
-            export PATH=/projects/biokem/software/biokem/users/src/lab_specific/luger:"$PATH"
+            export PATH=/projects/biokem/software/biokem/users/src/lab_specific/<lab>:"$PATH"
           fi
           done`
 
