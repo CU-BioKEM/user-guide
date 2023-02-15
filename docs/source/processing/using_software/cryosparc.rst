@@ -332,6 +332,5 @@ These will give users from each labs access to their specific Cryosparc builds.
           do
           if [ "$USER" == "<admin>" ]; then
             alias cryosparcm='ssh -o KexAlgorithms=ecdh-sha2-nistp521 <user>@<ip> "/home/<user>/cryosparc/cryosparc_master/bin/cryosparcm ${1}"'
-            export PATH=/projects/biokem/software/biokem/users/src/lab_specific/<lab>:"$PATH"
           fi
           done`
