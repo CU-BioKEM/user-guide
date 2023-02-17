@@ -225,9 +225,7 @@ But we need to make a few important changes for this to work.
       cd ../cryosparc_setup
 
 #. Edit ``run_installer.sh`` and run
-#. Edit ``ip_address.sh`` to correct IP and run
-#. Run ``cluster_fix.sh``
-#. Edit config to include ``export CRYOSPARC_DISABLE_IMPORT_ON_MASTER=true``
+#. Edit ``fix_cluster.sh`` to correct IP and run
 #. Start cryosparc
 
     .. code-block:: bash
@@ -296,7 +294,6 @@ Now that we've installed the 'master' instance, we can install the worker on Alp
     .. code-block:: bash
 
       ./run_worker_install.sh
-      echo "export CRYOSPARC_SSD_PATH=\$SLURM_SCRATCH" >> ../cryosparc_worker/config.sh
 
 #. Open new terminal
 
