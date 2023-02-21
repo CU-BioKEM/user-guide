@@ -242,6 +242,12 @@ But we need to make a few important changes for this to work.
       cryosparcm cluster connect
 
 #. Edit ``run_first_user.sh`` and run
+#. The last thing to do is setup auto restarting of the instance in the event of a reboot
+
+    .. code-block:: bash
+
+      crontab -e
+      append this to end -> @reboot sleep 60 && /home/biokem/cryosparc/cryosparc_master/bin/cryosparcm restart
 
 .. _Cryoworker:
 
