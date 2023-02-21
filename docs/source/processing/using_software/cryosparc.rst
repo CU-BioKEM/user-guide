@@ -247,7 +247,9 @@ But we need to make a few important changes for this to work.
     .. code-block:: bash
 
       crontab -e
-      append this to end -> @reboot sleep 60 && /home/biokem/cryosparc/cryosparc_master/bin/cryosparcm restart
+      append this to end:
+      @reboot rm /tmp/cryo*
+      @reboot sleep 60 && /home/biokem/cryosparc/cryosparc_master/bin/cryosparcm restart
 
 .. _Cryoworker:
 
