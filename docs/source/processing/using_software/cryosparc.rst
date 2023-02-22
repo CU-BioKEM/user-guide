@@ -239,6 +239,7 @@ But we need to make a few important changes for this to work.
 
       cd alpine
       nano cluster_info.json -> edit to correct worker bin path
+      nano cluster_script.sh -> edit job names to cs-<lab>...
       cryosparcm cluster connect
 
 #. Edit ``run_first_user.sh`` and run
