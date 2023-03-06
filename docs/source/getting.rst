@@ -17,7 +17,7 @@ Push to Petalibrary (*Preferred method*)
 The preferred method of getting your data from the BioKEM facility is to have us
 push it to your `biokem-deposit` folder in your lab's Petalibrary. We can do
 this in real time so you can start processing data as it comes off the scope
-(:doc:/processing/otf_motion_correction). We will need to set up a few things to
+(:doc:`processing/otf_motion_correction`). We will need to set up a few things to
 get this working for your lab, so make sure to contact the facility in advance
 for initial setup.
 
@@ -37,16 +37,28 @@ Globus. The is a fairly secure option, although it can be slow.
 
 #. Logon to the biokem-storage server.
 #. Start screen for running client in:
-  ``screen -S globus``
+
+  .. code-block:: bash
+    screen -S globus
+
 #. Log into your globus client:
-   ``globus login``
+
+  .. code-block:: bash
+    globus login
+
 #. Copy and paste hyperlink into web browser.
 #. Code will be generated.
 #. Copy and paste code into biokem-storage terminal.
 #. Start the Globus connect:
-   ``./home/biokem_manager/software/globus/globusconnectpersonal-3.1.5/globusconnectpersonal -start &``
+
+  .. code-block:: bash
+    ./home/biokem_manager/software/globus/globusconnectpersonal-3.1.5/globusconnectpersonal -start &
+
 #. Detach from the screen:
-   ``ctrl+AD``
+
+  .. code-block:: bash
+   ctrl+AD
+
 #. Then, start the transfer on the Globus Connect GUI.
 
 .. _AWS:
@@ -70,7 +82,7 @@ with a user account on the biokem-storage server you will be able to use an
 
   screen -S transfer
   rsync -auP <user_name>@biokem-storage.int.colorado.edu:/data/interim_storage/<lab-folder>/<collection_name>
-  screen ctrl+ad
+  ctrl+ad
 
 To reattach to the screen later:
 
