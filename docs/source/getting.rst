@@ -39,11 +39,13 @@ Globus. The is a fairly secure option, although it can be slow.
 #. Start screen for running client in:
 
   .. code-block:: bash
+
     screen -S globus
 
 #. Log into your globus client:
 
   .. code-block:: bash
+
     globus login
 
 #. Copy and paste hyperlink into web browser.
@@ -52,11 +54,13 @@ Globus. The is a fairly secure option, although it can be slow.
 #. Start the Globus connect:
 
   .. code-block:: bash
+
     ./home/biokem_manager/software/globus/globusconnectpersonal-3.1.5/globusconnectpersonal -start &
 
 #. Detach from the screen:
 
   .. code-block:: bash
+  
    ctrl+AD
 
 #. Then, start the transfer on the Globus Connect GUI.
