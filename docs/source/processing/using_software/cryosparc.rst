@@ -1,11 +1,11 @@
 Cryosparc
 =========
 
-.. _General users:
-
 *The SLURM token allowing submission to all CryoSPARC instances setup through
 BioKEM will expire in early 2028. This will prevent all instances from
 submitting jobs to the cluster.*
+
+.. _General users:
 
 General users
 -------------

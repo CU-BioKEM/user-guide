@@ -1,8 +1,6 @@
 On-the-fly motion correction
 ============================
-The BioKEM facility can also offer on-the-fly motion correction and 2D classification 
-through CryoSPARC or RELION (if you have a valid license) using our dedicated 
-preprossessing node. Ask Chuck for more details.
+If you have properly configured your lab's :doc:`../getting.rst#push`
 
 .. image:: ../images/schematic_cryosparclive.png
    :width: 200
@@ -10,15 +8,11 @@ preprossessing node. Ask Chuck for more details.
 
 CryoSPARC Live
 --------------
-
-To use CryoSPARC Live through the BioKEM facility we will employ a virtual 
-machine hosted on CUmulus. This vitrual machine will allow us to run jobs 
-longer than normally allowed and still be able to submit processing tasks 
-through slurm to blanca. 
+To use CryoSPARC Live we will configure a virtual machine hosted on CUmulus.
+This vitrual machine will allow your lab to run jobs through CryoSPARC on the
+cluster. (Currently normal CryoSPARC works, Live needs one bug ironed out.)
 
 RelionOTF
 ---------
-RELION on-the-fly can be ran by the facility by running an interactive job on 
-the preprocessing node. The ``Schedules`` feature of RELION allows it to detect
-new images as they are pushed to petalibrary, much the same was as CryoSPARC Live,
-but with less feedback.
+RELION on-the-fly can be ran through the SBGrid installation on the cluster.
+See <https://relion.readthedocs.io/en/release-4.0/Onthefly.html`_
