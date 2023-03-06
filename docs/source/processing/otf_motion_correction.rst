@@ -1,6 +1,6 @@
 On-the-fly motion correction
 ============================
-If you have properly configured your lab's :doc:`../getting.rst#push`
+If you have properly configured your lab's :doc:`../getting.rst`
 
 .. image:: ../images/schematic_cryosparclive.png
    :width: 200
@@ -15,4 +15,4 @@ cluster. (Currently normal CryoSPARC works, Live needs one bug ironed out.)
 RelionOTF
 ---------
 RELION on-the-fly can be ran through the SBGrid installation on the cluster.
-See <https://relion.readthedocs.io/en/release-4.0/Onthefly.html`_
+See `here <https://relion.readthedocs.io/en/release-4.0/Onthefly.html`_
