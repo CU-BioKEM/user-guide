@@ -38,30 +38,30 @@ Globus. The is a fairly secure option, although it can be slow.
 #. Logon to the biokem-storage server.
 #. Start screen for running client in:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    screen -S globus
+      screen -S globus
 
 #. Log into your globus client:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    globus login
+      globus login
 
 #. Copy and paste hyperlink into web browser.
 #. Code will be generated.
 #. Copy and paste code into biokem-storage terminal.
 #. Start the Globus connect:
 
-  .. code-block:: bash
+    .. code-block:: bash
 
-    ./home/biokem_manager/software/globus/globusconnectpersonal-3.1.5/globusconnectpersonal -start &
+      ./home/biokem_manager/software/globus/globusconnectpersonal-3.1.5/globusconnectpersonal -start &
 
 #. Detach from the screen:
 
-  .. code-block:: bash
-  
-   ctrl+AD
+    .. code-block:: bash
+
+     ctrl+AD
 
 #. Then, start the transfer on the Globus Connect GUI.
 
@@ -82,17 +82,17 @@ with a user account on the biokem-storage server you will be able to use an
 ``rsync`` command to transfer your data to your server from the
 ``interim_storage`` folder. Example command to run from your workstation:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  screen -S transfer
-  rsync -auP <user_name>@biokem-storage.int.colorado.edu:/data/interim_storage/<lab-folder>/<collection_name>
-  ctrl+ad
+    screen -S transfer
+    rsync -auP <user_name>@biokem-storage.int.colorado.edu:/data/interim_storage/<lab-folder>/<collection_name>
+    ctrl+ad
 
 To reattach to the screen later:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  screen -r transfer
+    screen -r transfer
 
 .. _HDD:
 
