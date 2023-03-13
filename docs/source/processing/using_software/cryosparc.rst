@@ -153,6 +153,7 @@ permission to submit jobs. We will be using a variation of `this <https://curc.r
       cd .ssh
       touch authorized_keys
 
+#. In future, let's add the specific user group (also will need to edit fstab)
 #. Copy over curc.pub key
 #. Update ``/projects/biokem/software/biokem/users/src/lab_specific/cryosparc_vms.src``
 
@@ -185,16 +186,13 @@ Now we need to mount the lab's PetaLibrary to the VM, according to CURC's
     .. code-block:: bash
 
       #User lab PL
-      biokem@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab> fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
-      #User lab cryosparc worker
-      biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/<lab> /pl/active/BioKEM/software/cryosparc/<lab> fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp 0 0
+      biokem@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab> fuse.sshfs defaults,_netdev,allow_other,default_permissions,identityfile=/home/ubuntu/.ssh/cryo,uid=biokem,gid=biokempgrp,reconnect 0 0
 
 #. If you want to mount manually:
 
     .. code-block:: bash
 
       sudo sshfs -o allow_other,IdentityFile=/home/ubuntu/.ssh/cryo biokem@dtn.rc.int.colorado.edu:/pl/active/<lab> /pl/active/<lab>
-      sudo sshfs -o allow_other,IdentityFile=/home/ubuntu/.ssh/cryo biokem@dtn.rc.int.colorado.edu:/pl/active/BioKEM/software/cryosparc/<lab> /pl/active/BioKEM/software/cryosparc/<lab>
 
 .. _Cryomaster:
 
@@ -321,7 +319,6 @@ specific aliases in ``/projects/biokem/software/biokem/users/src/lab_specific``.
 These will give users from each labs access to their specific Cryosparc builds.
 
 #. Edit cryosparc_vms.src to add easy access to VM ``alias <lab>-cryosparc-vm="ssh -o KexAlgorithms=ecdh-sha2-nistp521 ubuntu@<IP>"`` (only gives access to BioKEM IT)
-#. ``mkdir /projects/biokem/software/biokem/users/src/lab_specific/<lab>``
 #. Update ``/projects/biokem/software/biokem/users/src/lab_specific/labs.src`` with new lab group
 #. Make lab specific functions: ``touch <lab>lab.src``
 
@@ -330,7 +327,7 @@ These will give users from each labs access to their specific Cryosparc builds.
         #cryosparc
         alias cryosparc='firefox http://<IP>:<base_port>'
 
-#. Make admin functions
+#. Make admin functions (may enable later, but not now)
 
      .. code-block:: bash
 
