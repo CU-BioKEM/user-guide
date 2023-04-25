@@ -15,6 +15,12 @@ If you've set up your environment correctly (see :doc:`../configure`),
 ``biokem-interactive`` session.
 
   #. Log on to OpenOnDemand (see :doc:`../logging_on`)
+  #. Logon to a login node:
+
+      .. code-block:: bash
+
+        ssh login10
+
   #. Start an interactive session:
 
       .. code-block:: bash
@@ -42,12 +48,6 @@ Check the output of alphafold (it writes to the error file):
     .. code-block:: bash
 
       slurm-err <jobid>
-
-
-.. _Under the hood:
-
-Under the hood
---------------
 
 .. _Input file:
 
@@ -93,39 +93,6 @@ to download on RC infrastructure. I have downloaded it and place it in
 location, but won't be able to update it.). **Don't attempt to download this
 database on your own, use this one (the script does this for you).**
 
-.. _Alphafold conda environment:
-
-Alphafold conda environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In order to run Alphafold, we need a few libraries for the NVIDIA drivers. The
-``alphafold-predict`` script sets these up for you. But here's what's going on,
-for reference (based on `CURC instructions <https://curc.readthedocs.io/en/latest/software/python.html?highlight=conda#using-conda>`_.
-**You do not need to do this, it's handled by the script.**
-
-  #. Edit your ``.condarc`` file
-
-      .. code-block:: bash
-
-        nano ~/.condarc
-
-  #. Add these lines to it (the script will look here for the alphafold environment):
-
-      .. code-block:: bash
-
-        pkgs_dirs:
-          - /projects/$USER/.conda_pkgs
-        envs_dirs:
-          - /projects/$USER/software/anaconda/envs
-
-  #. Create a conda environment and install proper packages:
-
-      .. code-block:: bash
-
-        ml anaconda
-        conda create -n alphafold
-        conda activate alphafold
-        conda install -c nvidia cuda-nvcc
-
 .. Alpha submission:
 
 Submission script
@@ -145,7 +112,7 @@ proteins, alphafold-predict will submit those for you).
     #SBATCH --nodes=1
     #SBATCH --ntasks=10
     #SBATCH --mem=64gb
-    #SBATCH --gres=gpu:1
+    #SBATCH --gres=gpu:a100:1
     #SBATCH --time=24:00:00
     #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
     #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
@@ -155,12 +122,14 @@ proteins, alphafold-predict will submit those for you).
     echo "Predicting monomer for file: ${FASTA}"
 
     #Run this inside SBGrid environment
-    ml anaconda
-    conda activate alphafold
+    ml purge
+    ml cuda/11.2
+    _PTXAS=userpath
+    TF_FORCE_UNIFIED_MEMORY=1
     source /programs/sbgrid.shrc
 
-    #set to Alphafold 2.3.1 (database needs to be updated if changed)
-    ALPHAFOLD_X=2.3.1
+    #set to Alphafold 2.3.2 (database needs to be updated if changed)
+    ALPHAFOLD_X=2.3.2
     DB='/pl/active/BioKEM/software/alphafolddb/'
 
     /programs/x86_64-linux/alphafold/${ALPHAFOLD_X}/bin.capsules/run_alphafold.py \
@@ -183,33 +152,3 @@ proteins, alphafold-predict will submit those for you).
 
 Known errors
 ------------
-
-Our conda environment installs a newer NVIDIA driver which will disable parallel
-compilation and through the following warning, but lets you proceed:
-
-  .. code-block:: bash
-
-    The NVIDIA driver's CUDA version is 11.3 which is older than the ptxas CUDA ver
-    sion (12.0.140). Because the driver is older than the ptxas version, XLA is disabling parallel c
-    ompilation, which may slow down compilation. You should update your NVIDIA driver or use the NVI
-    DIA-provided CUDA forward compatibility packages.
-
-
-Running Alphafold without building conda first (either for a monomer or multimer)
-will result in the following error after about 40 minutes:
-
-  .. code-block:: bash
-
-    jaxlib.xla_extension.XlaRuntimeError: FAILED_PRECONDITION: Couldn't get
-    ptxas version string: INTERNAL: Running ptxas --version returned 32512
-
-This error has to do with a mismatch between a CUDA version and the NVIDIA
-driver installed on the graphics card (`see here
-<https://github.com/kalininalab/alphafold_non_docker/issues/26>`_)
-
-I have tried forcing a different CUDA version, this doesn't seem to solve the
-problem.
-
-There also seems to be a way to suppress this error by not using the GPU, but
-this will essentially make the program useless, so we need to fix this. Let me
-know (Shawn) when you have a fix and I will update this documentation.
