@@ -122,8 +122,7 @@ proteins, alphafold-predict will submit those for you).
     echo "Predicting monomer for file: ${FASTA}"
 
     #Run this inside SBGrid environment
-    ml purge
-    ml cuda/11.2
+    PATH=$PATH:/curc/sw/cuda/11.2/bin
     _PTXAS=userpath
     TF_FORCE_UNIFIED_MEMORY=1
     source /programs/sbgrid.shrc
