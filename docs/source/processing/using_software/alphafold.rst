@@ -147,6 +147,31 @@ proteins, alphafold-predict will submit those for you).
         --model_preset=monomer \
         --pdb70_database_path=${DB}pdb70/pdb70
 
+.. GPU timings:
+
+GPU timings
+~~~~~~~~~~~
+
+I tested the speed different GPU configurations on Blanca using a small multimer
+system (2 chains, ~140aa) and found that A40s, followed by A100s were the fastest.
+The scripts in "alphafold-predict" will submit to A100s.
+
+      A40 1x : 1670s
+      A40 2x : 1670s
+      A100 2x : 1785s
+      A100 1x : 1851s
+      Rtx6000 2x : 1895s
+      Rtx6000 1x : 1907s
+      V100 1x : 2354s
+      V100 2x : 2390s
+      T4 1x : 2890s
+      CPU 16x : 7802s
+      P100 1x : 2513s
+      CPU 8x : 10513s
+      CPU 32x : 11981s
+      P100 2x : 2989s
+
+
 .. _Known errors:
 
 Known errors
