@@ -15,12 +15,6 @@ If you've set up your environment correctly (see :doc:`../configure`),
 ``biokem-interactive`` session.
 
   #. Log on to OpenOnDemand (see :doc:`../logging_on`)
-  #. Logon to a login node:
-
-      .. code-block:: bash
-
-        ssh login10
-
   #. Start an interactive session:
 
       .. code-block:: bash
@@ -110,9 +104,10 @@ proteins, alphafold-predict will submit those for you).
     #SBATCH --account=blanca-biokem
     #SBATCH --job-name=alphafold_predict
     #SBATCH --nodes=1
-    #SBATCH --ntasks=10
+    #SBATCH --ntasks=8
     #SBATCH --mem=64gb
-    #SBATCH --gres=gpu:a100:1
+    #SBATCH --constraint=A100|A40
+    #SBATCH --gres=gpu:1
     #SBATCH --time=24:00:00
     #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
     #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
@@ -122,9 +117,10 @@ proteins, alphafold-predict will submit those for you).
     echo "Predicting monomer for file: ${FASTA}"
 
     #Run this inside SBGrid environment
+    export BIOKEM_ALPHA_CPUS=8
+    TMPDIR=$SLURM_SCRATCH
     PATH=$PATH:/curc/sw/cuda/11.2/bin
     _PTXAS=userpath
-    TF_FORCE_UNIFIED_MEMORY=1
     source /programs/sbgrid.shrc
 
     #set to Alphafold 2.3.2 (database needs to be updated if changed)
@@ -147,6 +143,7 @@ proteins, alphafold-predict will submit those for you).
         --model_preset=monomer \
         --pdb70_database_path=${DB}pdb70/pdb70
 
+
 .. GPU timings:
 
 GPU timings
@@ -154,23 +151,31 @@ GPU timings
 
 I tested the speed different GPU configurations on Blanca using a small multimer
 system (2 chains, ~140aa) and found that A40s, followed by A100s were the fastest.
-The scripts in "alphafold-predict" will submit to A100s.
+The scripts in "alphafold-predict" will submit to use either A40s or A100s.
+Although the code seems to be optimized for 8 CPUS, you may change the number
+in the sbatch script by editing the ``BIOKEM_ALPHA_CPUS`` value.
 
-      A40 1x : 1670s
-      A40 2x : 1670s
-      A100 2x : 1785s
-      A100 1x : 1851s
-      Rtx6000 2x : 1895s
-      Rtx6000 1x : 1907s
-      V100 1x : 2354s
-      V100 2x : 2390s
-      T4 1x : 2890s
-      CPU 16x : 7802s
-      P100 1x : 2513s
-      CPU 8x : 10513s
-      CPU 32x : 11981s
-      P100 2x : 2989s
+  .. table:: GPU timings test
+     :widths: auto
 
+     ==========   =========
+     GPU type     Speed (s)
+     ==========   =========
+     CPU 8x       10513
+     CPU 16x      7802
+     CPU 32x      11981
+     P100 2x      2989
+     T4 1x        2890
+     P100 1x      2513
+     V100 2x      2390
+     V100 1x      2354
+     Rtx6000 1x   1907
+     Rtx6000 2x   1895
+     A100 1x      1851
+     A100 2x      1785
+     A40 1x       1670
+     A40 2x       1670
+     ==========   =========
 
 .. _Known errors:
 
