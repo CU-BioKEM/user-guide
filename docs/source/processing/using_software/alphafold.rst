@@ -104,7 +104,7 @@ proteins, alphafold-predict will submit those for you).
     #SBATCH --account=blanca-biokem
     #SBATCH --job-name=alphafold_predict
     #SBATCH --nodes=1
-    #SBATCH --ntasks=8
+    #SBATCH --ntasks=16
     #SBATCH --mem=64gb
     #SBATCH --constraint=A100|A40
     #SBATCH --gres=gpu:1
@@ -117,7 +117,7 @@ proteins, alphafold-predict will submit those for you).
     echo "Predicting monomer for file: ${FASTA}"
 
     #Run this inside SBGrid environment
-    export BIOKEM_ALPHA_CPUS=8
+    export BIOKEM_ALPHA_CPUS=16
     TMPDIR=$SLURM_SCRATCH
     PATH=$PATH:/curc/sw/cuda/11.2/bin
     _PTXAS=userpath
@@ -149,10 +149,11 @@ proteins, alphafold-predict will submit those for you).
 GPU timings
 ~~~~~~~~~~~
 
-I tested the speed different GPU configurations on Blanca using a small multimer
+I tested the speed of different GPU configurations on Blanca using a small multimer
 system (2 chains, ~140aa) and found that A40s, followed by A100s were the fastest.
 The scripts in "alphafold-predict" will submit to use either A40s or A100s.
-Although the code seems to be optimized for 8 CPUS, you may change the number
+
+Although the code seems to be optimized for 16 CPUS, you may change the number
 in the sbatch script by editing the ``BIOKEM_ALPHA_CPUS`` value.
 
   .. table:: GPU timings test
