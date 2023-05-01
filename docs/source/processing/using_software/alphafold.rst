@@ -161,9 +161,9 @@ in the sbatch script by editing the ``BIOKEM_ALPHA_CPUS`` value.
      ==========   =========
      GPU type     Speed (s)
      ==========   =========
+     CPU 32x      11981
      CPU 8x       10513
      CPU 16x      7802
-     CPU 32x      11981
      P100 2x      2989
      T4 1x        2890
      P100 1x      2513
