@@ -12,10 +12,10 @@ computing cluster using software managed through SBGrid.
    :align: right
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   processing/how_to
    processing/otf_motion_correction
    processing/processing_resources
-   processing/how_to
-   processing/ccet_users
    processing/presentations
+   processing/ccet_users

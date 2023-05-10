@@ -1,5 +1,5 @@
-Blanca-biokem
-=============
+How to use Blanca
+=================
 
 To use BioKEM's nodes and software stack on Blanca first complete the list of
 tasks in the :doc:`getting_started` section (If you are a CCET member, first see
