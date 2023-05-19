@@ -59,8 +59,8 @@ open CryoSPARC and clikc on the lightning bolt on the left panel, from there sel
   - Enable ``Search recursively``
   - You have to press the green ``Enable`` button, in order to be able to press ``Start session`` at the top
 
-Using Topaz
-~~~~~~~~~~~
+Topaz
+~~~~~
 
 Topaz is a neural net based picking algorithm. We will use the version installed 
 through SBGrid. For ``Path to Topaz Executable`` use ``/programs/x86_64-linux/topaz/0.2.5_cu11/bin.capsules/topaz`` 
