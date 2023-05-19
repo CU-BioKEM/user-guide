@@ -16,9 +16,6 @@ you need to do to run it is:
   #. Open terminal
   #. Run the command ``cryosparc``
 
-Do the same for CryoSPARCLive, but then click on the lightning bolt. (See
-:doc:`../otf_motion_correction`)
-
 .. _cryosparc tips:
 
 Tips
@@ -50,7 +47,7 @@ CryoSPARC Live
 `CryoSPARC Live <https://guide.cryosparc.com/live/about-cryosparc-live>`_ allows you to perform preprocessing tasks (motion correction, 
 CTF estimation, particle picking, 2D classification, and Ab-initio reconstruction) as images are transfered into your PL. It can also 
 be useful even if all your images are already in place, in that you can tweak parameters and see the results very quickly. To use Live, 
-open CryoSPARC and clikc on the lightening bolt on the left panel, from there select a project (or make a new one), and follow the 
+open CryoSPARC and clikc on the lightning bolt on the left panel, from there select a project (or make a new one), and follow the 
 `guide <https://guide.cryosparc.com/live/about-cryosparc-live>`_. A few things to consider:
 
   - When selecting worker lanes, try ``blance-biokem`` or ``blanca``
@@ -71,7 +68,7 @@ you can substitute ``0.2.5_cu11`` for another version, if available.
 
 A few things to consider:
 
-  - Check out the `Topaz tutorial <https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz>`_before starting
+  - Check out the `Topaz tutorial <https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz>`_ before starting
   - Train topaz on a small subset (10-50) exposures first, aiming for ~1000 particles
   - Training topaz on too many particles (>5000) will result in a job failure
   - After training a small set and seeing good results with particle picking, move on to full dataset
