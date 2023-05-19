@@ -1,6 +1,5 @@
 On-the-fly motion correction
 ============================
-If you have properly configured your lab's :doc:`../getting`
 
 .. image:: ../images/schematic_cryosparclive.png
    :width: 200
@@ -10,7 +9,7 @@ CryoSPARC Live
 --------------
 To use CryoSPARC Live we will configure a virtual machine hosted on CUmulus and 
 set up your lab's PL allocation for file pushing from the storage server.
-See :doc:`using_software/cryosparc`
+See :doc:`using_software/cryosparc` for usage.
 
 RelionOTF
 ---------
