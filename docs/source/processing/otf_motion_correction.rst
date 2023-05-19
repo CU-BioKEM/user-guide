@@ -8,11 +8,12 @@ If you have properly configured your lab's :doc:`../getting.rst`
 
 CryoSPARC Live
 --------------
-To use CryoSPARC Live we will configure a virtual machine hosted on CUmulus.
-This vitrual machine will allow your lab to run jobs through CryoSPARC on the
-cluster. (Currently normal CryoSPARC works, Live needs one bug ironed out.)
+To use CryoSPARC Live we will configure a virtual machine hosted on CUmulus and 
+set up your lab's PL allocation for file pushing from the storage server.
+See :doc:`using_software/cryosparc.rst#cryosparc-live`
 
 RelionOTF
 ---------
-RELION on-the-fly can be ran through the SBGrid installation on the cluster.
-See `here <https://relion.readthedocs.io/en/release-4.0/Onthefly.html`_
+RELION on-the-fly can be ran through the SBGrid installation on the cluster, again
+you will need to make sure your lab's PL is porperly configure for file pushing.
+See `here <https://relion.readthedocs.io/en/release-4.0/Onthefly.html`_ for more.
