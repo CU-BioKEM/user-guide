@@ -47,14 +47,14 @@ CryoSPARC Live
 `CryoSPARC Live <https://guide.cryosparc.com/live/about-cryosparc-live>`_ allows you to perform preprocessing tasks (motion correction, 
 CTF estimation, particle picking, 2D classification, and Ab-initio reconstruction) as images are transfered into your PL. It can also 
 be useful even if all your images are already in place, in that you can tweak parameters and see the results very quickly. To use Live, 
-open CryoSPARC and clikc on the lightning bolt on the left panel, from there select a project (or make a new one), and follow the 
+open CryoSPARC and click on the lightning bolt on the left panel, from there select a project (or make a new one), and follow the 
 `guide <https://guide.cryosparc.com/live/about-cryosparc-live>`_. A few things to consider:
 
   - When selecting worker lanes, try ``blance-biokem`` or ``blanca``
   - Set ``Number of Preprocessing GPU Workers`` to 2 or more
   - Disable ``Use SSD``
   - Enable ``Enable continuous import``
-  - ``Directory to watch`` IS really the directory, not the file name with a wildcard as it normally is
+  - ``Directory to watch`` is really the directory, not the file name with a wildcard as it normally is
   - ``File name wildcard filter`` set to ``*.eer`` (or ``*.mrc``, etc.)
   - Enable ``Search recursively``
   - You have to press the green ``Enable`` button, in order to be able to press ``Start session`` at the top
