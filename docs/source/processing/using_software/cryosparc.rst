@@ -19,15 +19,6 @@ you need to do to run it is:
 Do the same for CryoSPARCLive, but then click on the lightning bolt. (See
 :doc:`../otf_motion_correction`)
 
-.. _Lab admins:
-
-Lab admins
-----------
-You should be able to run ``cryosparcm restart`` as normal, but keep in mind
-that this setup is more complex than a standalone workstation and the problems
-are also.
-
-
 .. _cryosparc tips:
 
 Tips
@@ -39,6 +30,7 @@ Lanes
   - **Alpine**: RMACC (CU, CSU, ect.) general use cluster. This will submit to the ``aa100`` partition. Lots of A100's, but can have longer wait times. 24hr time limit.
   - **Blanca**: Buy-in condo cluster for CU. Mixed hardware, generally shorter wait times. 24hr time limit.
   - **Blanca-biokem**: The BioKEM owned partition of Blanca. 7 x RTX6000 and 2 x A100, we have priority. 7d time limit.
+  - **Blanca-128gb**: General Blanca cluster, but will request 128GB of memory for each job. This will result in longer wait times, but may be necessary for jobs that run out of memory otherwise.
 
 The VM running your installation of CryoSPARC can submit jobs to either Alpine
 or Blanca. Although your jobs should start eventually wherever you submit, they
