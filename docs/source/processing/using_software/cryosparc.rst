@@ -44,6 +44,39 @@ use the SSD if told to, but you could run out of space if running a large job.
 If you want to use it, try it out. If it fails, disable the SSD and resubmit. In
 my experience, enabling the SSD doesn't lead to a huge performance gain.
 
+CryoSPARC Live
+~~~~~~~~~~~~~~
+
+`CryoSPARC Live <https://guide.cryosparc.com/live/about-cryosparc-live>`_ allows you to perform preprocessing tasks (motion correction, 
+CTF estimation, particle picking, 2D classification, and Ab-initio reconstruction) as images are transfered into your PL. It can also 
+be useful even if all your images are already in place, in that you can tweak parameters and see the results very quickly. To use Live, 
+open CryoSPARC and clikc on the lightening bolt on the left panel, from there select a project (or make a new one), and follow the 
+`guide <https://guide.cryosparc.com/live/about-cryosparc-live>`_. A few things to consider:
+
+  - When selecting worker lanes, try ``blance-biokem`` or ``blanca``
+  - Set ``Number of Preprocessing GPU Workers`` to 2 or more
+  - Disable ``Use SSD``
+  - Enable ``Enable continuous import``
+  - ``Directory to watch`` IS really the directory, not the file name with a wildcard as it normally is
+  - ``File name wildcard filter`` set to ``*.eer`` (or ``*.mrc``, etc.)
+  - Enable ``Search recursively``
+  - You have to press the green ``Enable`` button, in order to be able to press ``Start session`` at the top
+
+Using Topaz
+~~~~~~~~~~~
+
+Topaz is a neural net based picking algorithm. We will use the version installed 
+through SBGrid. For ``Path to Topaz Executable`` use ``/programs/x86_64-linux/topaz/0.2.5_cu11/bin.capsules/topaz`` 
+you can substitute ``0.2.5_cu11`` for another version, if available. 
+
+A few things to consider:
+
+  - Check out the `Topaz tutorial <https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz>`_before starting
+  - Train topaz on a small subset (10-50) exposures first, aiming for ~1000 particles
+  - Training topaz on too many particles (>5000) will result in a job failure
+  - After training a small set and seeing good results with particle picking, move on to full dataset
+
+
 General
 ~~~~~~~
 
@@ -51,3 +84,12 @@ General
 - Winnow down particles (using NCC and power in ``Inspect particles``) before starting 2D classification
 - Submit to the general Blanca lane
 - Disable SSDs
+
+Bugs
+~~~~
+
+#. Firefox crashes
+  - In some cases Firefox will fail to open for specific users on the viz node. 
+  - If this happens, send a ticket to CURC to have them attempt to fix it.
+  - In the meantime, you can use the ``alias`` command on the cluster to find your lab's CryoSPARC IP 
+    address. Simply paste this into your local internet broswer and continue using CryoSPARC.
