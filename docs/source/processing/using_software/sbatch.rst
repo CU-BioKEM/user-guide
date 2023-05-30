@@ -67,9 +67,9 @@ To request a specific GPU:
 
 Where ``a100`` is ``a100,rtx6000,v100,etc.``
 
-**Always be realistic about how many resource your job will need to run. This
+**Always be realistic about how many resources your job will need to run. This
 will ensure your job runs quickly and doesn't hog resources that others might need.**
 
 **Another thing to remember is that the environment in which you submitted your** ``sbatch <script>`` \
 **command will be passed through to your job. You can always specify your environments, vairables, \
-or load modules before your running commands to ensure that it will run in the proper environment every time.**
+or load modules before your running commands to insure that it will run in the proper environment every time.**
