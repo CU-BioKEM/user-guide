@@ -1,13 +1,13 @@
 Configuring your environment
 ============================
 
-**Now that you have logged onto Blanca, you can start computing.  **If you plan on doing a lot of computing, consider purchasing an SBGrid license. Technically, each lab needs their own license.**
+**Now that you have logged onto Blanca, you can start computing.  *If you plan on doing a lot of computing, consider purchasing an SBGrid license. Technically, each lab needs their own license.**
 
-#. The first time you log onto blanca, run the following command to enable our :doc:`environments/biokem_environment` at login:
+#. The first time you log onto blanca, run the following command to enable our environment at login:
 
     ``echo 'source /projects/biokem/software/biokem/users/src/biokem_environment.src' >> ~/.bashrc``
 
-#. If you just ran the command above, close your terminal and open a new one.
+#. If you ran the command above, close your terminal and open a new one.
 
 #. Run the ``biokem-interactive`` or ``blanca-interactive`` commands to start an interactive node that will allow you to use software.
 
