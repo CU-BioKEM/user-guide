@@ -16,6 +16,17 @@ you need to do to run it is:
   #. Open terminal
   #. Run the command ``cryosparc``
 
+.. _adim:
+
+Lab admins
+----------
+
+Each lab should be assigned a lab admin.
+
+  - Initial admin account in lab's CryoSPARC.
+  - Rsponsible for creating new users within CryoSPARC.
+  - Can execute ``cryosparcm-restart`` in order to restart lab's CryoSPARC instance.
+
 .. _cryosparc tips:
 
 Tips
@@ -87,6 +98,6 @@ Bugs
 
 #. Firefox crashes
   - In some cases Firefox will fail to open for specific users on the viz node. 
-  - If this happens, send a ticket to CURC to have them attempt to fix it.
-  - In the meantime, you can use the ``alias`` command on the cluster to find your lab's CryoSPARC IP 
+  - Use the ``resetfirefox`` command.
+  - You can use the ``alias`` command on the cluster to find your lab's CryoSPARC IP 
     address. Simply paste this into your local internet broswer and continue using CryoSPARC.
