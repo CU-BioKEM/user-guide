@@ -69,7 +69,7 @@ open CryoSPARC and click on the lightning bolt on the left panel, from there sel
   - ``File name wildcard filter`` set to ``*.eer`` (or ``*.mrc``, etc.)
   - Enable ``Search recursively``
   - You have to press the green ``Enable`` button, in order to be able to press ``Start session`` at the top.
-  - **Make sure to ``Pause`` or end your session after you are done, as it will continue to allocate nodes until it's done.** 
+  - **Make sure to pause or end your session after you are done, as it will continue to allocate nodes until it's done.** 
 
 Topaz
 ~~~~~
