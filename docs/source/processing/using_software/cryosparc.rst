@@ -61,14 +61,15 @@ be useful even if all your images are already in place, in that you can tweak pa
 open CryoSPARC and click on the lightning bolt on the left panel, from there select a project (or make a new one), and follow the 
 `guide <https://guide.cryosparc.com/live/about-cryosparc-live>`_. A few things to consider:
 
-  - When selecting worker lanes, try ``blance-biokem`` or ``blanca``
-  - Set ``Number of Preprocessing GPU Workers`` to 2 or more
+  - When selecting worker lanes, try ``blance-biokem`` or ``blanca``.
+  - Set ``Number of Preprocessing GPU Workers`` to 2 or more.
   - Disable ``Use SSD``
   - Enable ``Enable continuous import``
-  - ``Directory to watch`` is really the directory, not the file name with a wildcard as it normally is
+  - ``Directory to watch`` is really the directory, not the file name with a wildcard as it normally is.
   - ``File name wildcard filter`` set to ``*.eer`` (or ``*.mrc``, etc.)
   - Enable ``Search recursively``
-  - You have to press the green ``Enable`` button, in order to be able to press ``Start session`` at the top
+  - You have to press the green ``Enable`` button, in order to be able to press ``Start session`` at the top.
+  - **Make sure to ``Pause`` or end your session after you are done, as it will continue to allocate nodes until it's done.** 
 
 Topaz
 ~~~~~
@@ -80,9 +81,9 @@ you can substitute ``0.2.5_cu11`` for another version, if available.
 A few things to consider:
 
   - Check out the `Topaz tutorial <https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz>`_ before starting
-  - Train topaz on a small subset (10-50) exposures first, aiming for ~1000 particles
-  - Training topaz on too many particles (>5000) will result in a job failure
-  - After training a small set and seeing good results with particle picking, move on to full dataset
+  - Train topaz on a small subset (10-50) exposures first, aiming for ~1000 particles.
+  - Training topaz on too many particles (>5000) will result in a job failure.
+  - After training a small set and seeing good results with particle picking, move on to full dataset.
 
 
 General
