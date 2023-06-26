@@ -17,9 +17,9 @@ Using specific programs on Blanca:
 .. toctree::
    :maxdepth: 1
 
-   using_software/relion
-   using_software/cryosparc
    using_software/alphafold
-   using_software/imod
    using_software/eman2
    using_software/chimera
+   using_software/cryosparc
+   using_software/imod
+   using_software/relion
