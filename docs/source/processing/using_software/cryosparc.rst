@@ -5,6 +5,10 @@ CryoSPARC
 BioKEM will expire in early 2028. This will prevent all instances from
 submitting jobs to the cluster.*
 
+CryoSPARC is a webapp-based cryoEM data processing suite devolped by 
+Structura Biotechnology. Although proprietary, licenses are available 
+to academic users for free.
+
 .. _General users:
 
 General users
@@ -25,7 +29,7 @@ Each lab should be assigned a lab admin.
 
   - Initial admin account in lab's CryoSPARC.
   - Responsible for creating new users within CryoSPARC.
-  - Can execute ``cryosparcm-restart`` to restart lab's CryoSPARC instance.
+  - Can execute ``cryosparcm-restart`` to restart lab's CryoSPARC instance. -> needs to be debugged
 
 .. _cryosparc tips:
 
@@ -80,6 +84,7 @@ you can substitute ``0.2.5_cu11`` for another version, if available.
 
 A few things to consider:
 
+  - **Topaz needs to be run on a blanca lane (because of SBGrid)**
   - Check out the `Topaz tutorial <https://guide.cryosparc.com/processing-data/all-job-types-in-cryosparc/deep-picking/topaz>`_ before starting
   - Train topaz on a small subset (10-50) exposures first, aiming for ~1000 particles.
   - Training topaz on too many particles (>5000) will result in a job failure.
