@@ -58,7 +58,7 @@ interfaces, like ChimeraX. This is done through a web-based portal called
 `CURC Open OnDemand <https://ondemand.rc.colorado.edu>`__ and is how
 even command line based computing should be done on Blanca.
 
-.. image:: ../images/schematic_cumulus.png
+.. image:: ../images/schematic.png
    :width: 300
    :align: right
 
