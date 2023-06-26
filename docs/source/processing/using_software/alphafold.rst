@@ -87,7 +87,7 @@ to download on RC infrastructure. I have downloaded it and place it in
 location, but won't be able to update it.). **Don't attempt to download this
 database on your own, use this one (the script does this for you).**
 
-.. Alpha submission:
+.. _Alpha submission:
 
 Submission script
 ~~~~~~~~~~~~~~~~~

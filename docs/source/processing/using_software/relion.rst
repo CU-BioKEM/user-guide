@@ -18,9 +18,9 @@ Sbatch submission
 RELION is built with HPC integration in mind, so it can 
 submit sbatch scripts for you and makes them easy to write
 inside the GUI. (underlying templates are found at 
-`/projects/biokem/software/biokem/users/src`). To start, allocate
+``/projects/biokem/software/biokem/users/src``). To start, allocate
 an interactive job with minimal resources to run the GUI on Blanca,
-start the GUI, and then `Submit to queue`:
+start the GUI, and then ``Submit to queue``:
 
     .. code-block:: bash
       
@@ -29,16 +29,16 @@ start the GUI, and then `Submit to queue`:
       sbgrid
       relion
 
-Now in the `Running` tab:
+Now in the ``Running`` tab:
 
-    - Set `Submit to queue` to `Yes`
-    - Defaults should be auto populated (`Walltime` can be up to `168:00:00`)
+    - Set ``Submit to queue`` to ``Yes``
+    - Defaults should be auto populated (``Walltime`` can be up to ``168:00:00``)
     - If you want to submit to Blana at large:
         
-        - `Queue name` = `blanca`
-        - `QoS` = `preemtable`
-        - `Account` = `blanca-biokem`
-        - `Walltime` = `24:00:00` (or less)
+        - ``Queue name`` = ``blanca``
+        - ``QoS`` = ``preemtable``
+        - ``Account`` = ``blanca-biokem``
+        - ``Walltime`` = ``24:00:00`` (or less)
 
 You can submit multiple jobs at the same time using this method. 
 You can use the GUI to moniter the output of each job.
