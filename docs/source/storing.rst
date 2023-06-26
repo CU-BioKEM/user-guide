@@ -8,54 +8,40 @@ General flow
 ------------
 The BioKEM facility has a number of storage devices for different applications:
 
-    - :ref:`K3 server`
-    - :ref:`Active capture`
-    - :ref:`Interm storage`
+    - :ref:`Falcon server`
+    - :ref:`Interim storage`
     - :ref:`Vault`
 
 +----------------+--------+-------+----------+----------------------------+
 | Device         | Size   | Type  | User     | Length of storage          |
 +----------------+--------+-------+----------+----------------------------+
-| K3 Server      | 10TB   | RAID0 | Facility | Minutes (during capture)   |
+| Falcon Server  | 70TB   | RAID0 | Facility | 2 weeks (auto deleted)     |
 +----------------+--------+-------+----------+----------------------------+
-| Active capture | 109TB* | RAID6 | Facility | Days (duration of capture) |
-+----------------+--------+-------+----------+----------------------------+
-| Interm storage | 109TB* | RAID6 | User     | 2 weeks (auto deleted)     |
+| Interim storage| 109TB  | RAID6 | User     | 2 weeks (auto deleted)     |
 +----------------+--------+-------+----------+----------------------------+
 | Vault          | 58TB   | RAID6 | External | 3 months                   |
 +----------------+--------+-------+----------+----------------------------+
-*109TB shared between Active and Interm 
 
 .. image:: images/schematic_k3.png
    :width: 300
    :align: right
 
-.. _K3 server:
+.. _Falcon server:
 
-K3 server
----------
-The K3 server contains 10TB of RAID0 storage for storing images directly off of the K3
-camera. This is enough storage for roughly one week of data collection, however this
-storage device is not redundant on its own, so data is push live to the 
-:ref:`Active capture` partition of the biokem-storage server. 
+Falcon server
+-------------
+The Falcon server contains 70TB of RAID0 storage for storing images directly off the Krios. 
+This is enough storage for roughly one month of data collection, however this
+storage device is not redundant on its own, so data is pushed live to the 
+:ref:`Interim storage` partition of the biokem-storage server and the PetaLibrary, if possible.
+Data is automatically deleted after 2 weeks.
 
-.. _Active capture:
+.. _Interim storage:
 
-Active capture
+Interim storage
 --------------
-The active-capture partition is part of the RAID6 storage device on the biokem-storage
-server. Data is shunted from the K3 server directly to here. The advantange of this
-is the data transfer is local and can be performed in the event of an internet outage.
-This partition is on the same device as :ref:`Interm storage`, together they have 
-109TB of RAID6 storage. Data is only stored here while actively capturing it.  
-
-.. _Interm storage:
-
-Interm storage
---------------
-Interm storage is a costumer facing partition of the biokem-storage device. This is
-from where users can pull their data. Combined with :ref:`Active capture` it has 
-109TB of RAID6 storage. Data is automatically deleted after 2 weeks **no exceptions**. 
+Interim storage is a costumer facing partition of the biokem-storage device. This is
+where users can pull their data. Data is automatically deleted after 2 weeks. 
 
 .. _Vault:
 
