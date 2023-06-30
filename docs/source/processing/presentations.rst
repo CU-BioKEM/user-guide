@@ -12,6 +12,7 @@ For all available powerpoint presentations see our github page:
 Specific presentations
 ----------------------
 
-#. Intro to computing on Blanca
+#. 2023 intro to computing on Blanca `Video <https://www.youtube.com/watch?v=p_e5GMFrz8g>`_
+#. 2022 intro to computing on Blanca
     - `Slides <https://github.com/CU-BioKEM/user-guide/blob/main/presentations/blanca_intro.pdf>`_
     - `Video <https://youtu.be/yJbWg7k02L8>`_
