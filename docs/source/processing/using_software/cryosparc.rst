@@ -105,5 +105,6 @@ Bugs
 #. Firefox crashes
   - In some cases Firefox will fail to open for specific users on the viz node. 
   - Use the ``resetfirefox`` command.
+  - If that doesn't work try ``rm -rf ~/.mozilla`` (this will remove your cookies and stored logins).
   - You can use the ``alias`` command on the cluster to find your lab's CryoSPARC IP 
     address. Simply paste this into your local internet broswer and continue using CryoSPARC.
