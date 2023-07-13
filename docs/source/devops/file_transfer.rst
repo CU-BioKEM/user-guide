@@ -10,14 +10,16 @@ interim folder. This script will also push images to a PetaLibrary
 deposit folder, if specified. Should be run in a screen. It will
 also place the newest gain ref into that folder.
 
-Usage:
-  /home/biokem_manager/scripts/facility/bin/transfer [options]
-      -h,   (help)    show help message
-      -s,   (source)  folder on falcon camera to be transfered
-      -i    (interim) name of lab to transfer to in interim folder (i.e. luger-lab)
-      -p    (pl)      optional flag to push data to petalibrary (i.e. luger-lab)
-      -a    (amazon)  push to AWS bucket (i.e. ex1001)
-      -g    (globus)  stage copy of folder in shareable globus collection 
+    .. code-block:: bash
+
+      Usage:
+        /home/biokem_manager/scripts/facility/bin/transfer [options]
+            -h,   (help)    show help message
+            -s,   (source)  folder on falcon camera to be transfered
+            -i    (interim) name of lab to transfer to in interim folder (i.e. luger-lab)
+            -p    (pl)      optional flag to push data to petalibrary (i.e. luger-lab)
+            -a    (amazon)  push to AWS bucket (i.e. ex1001)
+            -g    (globus)  stage copy of folder in shareable globus collection 
 
 To use:
 
