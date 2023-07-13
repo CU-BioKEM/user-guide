@@ -8,5 +8,6 @@ IT person or facility manager.
    :maxdepth: 2
 
    devops/file_transfer
+   devops/file_cleanup
    devops/user_maintenance
    devops/cryosparc_setup
