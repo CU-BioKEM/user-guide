@@ -1,5 +1,5 @@
-File transfer
-=============
+CryoSPARC setup
+===============
 
 CryoSPARC is setup to run on the CURC clusters using VM's built in CUmulus. This
 setup is rather complex and requires special permissions to implement.
