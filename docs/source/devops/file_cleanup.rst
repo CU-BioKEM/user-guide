@@ -11,9 +11,5 @@ that are executed using a crontab entry:
       0 * * * * /home/biokem_manager/scripts/facility/bin/remove-old-dirs.sh
 
 - ``disk-use-check.sh`` emails a list of disk usage daily.
-- ``remove-old-files.sh`` deletes files older than a certian number of days from the falcon
-server, interim_storage, and vault. Certain folders are protected and number of days can 
-be edited, if desired. 
-- ``remove-old-dirs.sh`` does the same thing, but removes the empty directories left behind
-by the files script. As files nest down, it needs to run more fequently to remove all empty
-folders each day.
+- ``remove-old-files.sh`` deletes files older than a certian number of days from the falcon server, interim_storage, and vault. Certain folders are protected and number of days can be edited, if desired.
+- ``remove-old-dirs.sh`` does the same thing, but removes the empty directories left behind by the files script. As files nest down, it needs to run more fequently to remove all empty folders each day.
