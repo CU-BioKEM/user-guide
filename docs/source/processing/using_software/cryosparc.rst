@@ -29,7 +29,7 @@ Each lab should be assigned a lab admin.
 
   - Initial admin account in lab's CryoSPARC.
   - Responsible for creating new users within CryoSPARC.
-  - Can execute ``cryosparcm-restart`` to restart lab's CryoSPARC instance. -> needs to be debugged
+  - Can execute ``cryosparcm-restart`` to restart lab's CryoSPARC instance.
 
 .. _cryosparc tips:
 
