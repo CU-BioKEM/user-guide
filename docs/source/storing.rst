@@ -19,7 +19,7 @@ The BioKEM facility has a number of storage devices for different applications:
 +----------------+--------+-------+----------+----------------------------+
 | Interim storage| 109TB  | RAID6 | User     | 2 weeks (auto deleted)     |
 +----------------+--------+-------+----------+----------------------------+
-| Vault          | 58TB   | RAID6 | External | 3 months                   |
+| Vault          | 58TB   | RAID6 | External | 3 months (auto deleted)    |
 +----------------+--------+-------+----------+----------------------------+
 
 .. image:: images/schematic.png
