@@ -49,3 +49,10 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+# -- New build.os config
+version: 2
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.11"
