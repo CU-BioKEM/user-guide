@@ -1,5 +1,6 @@
 ChimeraX
 ========
+
 ChimeraX is 3D structural visualization tool that renders publication quality figures
 and movies. It also has the capability to run VR (although not on the cluster), 
 molecular dynamics simulations, and build molecular models.
@@ -38,7 +39,7 @@ There are 3 ways to access ChimeraX on the cluster:
     
 
 Chimera
-=======
+-------
 Chimera is the older version of ChimeraX. In most ways ChimeraX is cleaner and produces
 much nicer figures, but Chimera has more built out features and can be useful for 
 certain applications.
