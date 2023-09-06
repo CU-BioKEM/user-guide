@@ -12,7 +12,7 @@ and runs them when resources become available. There are two ways to run softwar
 
 For various reasons, submitting an ``sbatch`` script is the preferred method.
 
-Using specific programs on Blanca:
+More information on running specific programs on Blanca:
 
 .. toctree::
    :maxdepth: 1

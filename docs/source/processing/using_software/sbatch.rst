@@ -59,11 +59,13 @@ To specify that a job runs on any Blanca nodes you need set these SBATCH variabl
 
 To request a GPU:
 
-Update this line with the number of GPUs ``#SBATCH --gres=gpu:1`
+Update this line with the number of GPUs ``#SBATCH --gres=gpu:1``
 
 To request a specific GPU:
 
-``#SBATCH --gres=gpu:a100:1``
+.. code-block:: bash
+
+  #SBATCH --gres=gpu:a100:1
 
 Where ``a100`` is ``a100,rtx6000,v100,etc.``
 
@@ -72,4 +74,4 @@ will ensure your job runs quickly and doesn't hog resources that others might ne
 
 **Another thing to remember is that the environment in which you submitted your** ``sbatch <script>`` \
 **command will be passed through to your job. You can always specify your environments, vairables, \
-or load modules before your running commands to insure that it will run in the proper environment every time.**
+or load modules in your scripts before running commands to insure that it will run in the proper environment every time.**
