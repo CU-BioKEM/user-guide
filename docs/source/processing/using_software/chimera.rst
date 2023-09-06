@@ -7,10 +7,9 @@ molecular dynamics simulations, and build molecular models.
 
 There are 3 ways to access ChimeraX on the cluster:
 
-#. *Preferred*. K80 viz node (all versions):
+#. *Preferred*. Viz node (all versions):
 
-    #. When starting an interactive job use ``Core Desktop (Presets)``
-    #. Select ``4 hours, 4 cores, K80 GPU``
+    #. When starting a viz node job, use more CPUs (maybe 8)
     #. Load Sbgrid and call ChimeraX
 
       .. code-block:: bash
@@ -18,7 +17,7 @@ There are 3 ways to access ChimeraX on the cluster:
         sbgrid
         chimerax
 
-#. General viz node (only RC installed v1.3):
+#. *Old* Viz node (only RC installed v1.3):
 
     #. Log onto a viz node
     #. Load module and start
