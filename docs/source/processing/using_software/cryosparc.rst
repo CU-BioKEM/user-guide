@@ -90,6 +90,24 @@ A few things to consider:
   - Training topaz on too many particles (>5000) will result in a job failure.
   - After training a small set and seeing good results with particle picking, move on to full dataset.
 
+Fourier cropping during motion correction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data collect in super-reolution mode is often too large to be practicle for most job types to deal with. 
+One way to reduce the image size is to "bin" it, which removes a certain sampling of pixels. The downside of 
+this approach is that lots of information, especially high resolution data, is lost. To reduce this effect, 
+CryoSPARC allows you to perform a Fourier crop after motion correction, which attempts to preserve more 
+high frequency information (`see here for an explainer <https://blog.posertinlab.com/posts/2022-10-20-fourier-cropping/https://blog.posertinlab.com/posts/2022-10-20-fourier-cropping/>`_)
+
+The downside of this operation is that it is memory intesive, especially with super resolution images. Essentially,
+each CPU allocated needs to read the images it's working on into memory. Unfortunately, the way CryoSPARC 
+allocates memory and number of CPUs for motion correction is based on number of GPUs allocated and not based on 
+the actually memory required to do the operation, which is dependent on image size. To get around this, we 
+can make a special lane which allocates lots of memory, while limiting the number of CPUs allocated. 
+
+  - ``64GB RAM``
+  - ``8 CPUs``
+  - ``1 GPU`` (I haven't test whether more GPUs will work or not)
 
 General
 ~~~~~~~
