@@ -2,11 +2,9 @@ DevOps
 ======
 
 This is the place for in depth documentation meant for the BioKEM
-IT person or facility manager.
+IT person or facility manager. All scripts are stored in repos in CU-BioKEM's github. 
 
-All scripts are stored in repos in CU-BioKEM's github. 
-
-The two main responsibilities for the manager are to manage
+The two main responsibilities for the manager are:
 
    - Storage server
 
