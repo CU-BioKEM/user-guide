@@ -17,9 +17,13 @@ also place the newest gain ref into that folder.
             -h,   (help)    show help message
             -s,   (source)  folder on falcon camera to be transfered
             -i    (interim) name of lab to transfer to in interim folder (i.e. luger-lab)
-            -p    (pl)      optional flag to push data to petalibrary (i.e. luger-lab)
-            -a    (amazon)  push to AWS bucket (i.e. ex1001)
-            -g    (globus)  stage copy of folder in shareable globus collection 
+            -p    (pl)      optional flag to push to petalibrary (i.e. luger-lab)
+            -a    (amazon)  optional flag to push to AWS bucket (i.e. ex1001)
+            -g    (globus)  optional flag to push to shareable globus collection through BioKEM\'s PetaLibrary (i.e. ex1001)
+            -d    (dropbox) optional flag to push to dropbox (i.e. ex1001)
+            -b    (box)     optional flag to push to box (i.e. ex1001)
+            -l    (longterm_storage) optional flag to push to /data/longterm_storage (i.e. luger-lab)
+            -e    (email)   optional flag to send email completion email to recipient(s) (i.e. shla9937@colorado.edu)
 
 To use:
 
@@ -82,6 +86,8 @@ A new one needs to be configured for every new users. AWS transfers are handled 
     .. code-block:: bash
 
       transfer -s <folder> -i external -a <ex1001 or other>
+
+We are using the ``s5cmd`` to transfer data in parallel. Each new AWS needs a new ``_v5.cfg`` file and an entry in the ``buckets.txt`` file. 
 
 Transfer to networked server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
