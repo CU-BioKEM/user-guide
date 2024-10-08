@@ -46,23 +46,11 @@ To use:
 
 Transfer to Globus
 ~~~~~~~~~~~~~~~~~~
-We have a Globus endpoint configured on the storage server. This should allow
+We can use CURC's Globus endpoint to share data from BioKEM's PL. This should allow
 you to transfer images through CU's Globus to wherever.
 
 #. Logon to the biokem-storage server.
-#. Start globus endpoint (this is a custom script, not a built in function)
-
-    .. code-block:: bash
-      
-      globus-start
-
-#. Start screen on biokem-storage server.
-
-    .. code-block:: bash
-      
-      screen -S transfer (or other name)
-
-#. Start transfer with the ``-g`` flag (this will sync another copy of data to the ``/data/globu_transfers`` folder) 
+#. Start transfer with the ``-g`` flag (this will sync another copy of data to the ``/pl/active/BioKEM/biokem-deposit/globus`` folder on PL) 
 
     .. code-block:: bash
 
@@ -75,31 +63,15 @@ you to transfer images through CU's Globus to wherever.
       ctrl+ad
 
 #. Logon to `Globus <https://www.globus.org/>`_
-#. If guest collection is already set up:
-
-  #. Search ``biokem-guest``
-  #. ``Permissions``
-  #. ``Add Permissions``
-  #. Make sure path is ``/`` and add email
-
-#. If guest collection is not already set up:
-
-  #. Search collection for ``biokem-storage``
-  #. Click ``share``
-  #. ``Add Guest Collection``
-  #. Fill out and ``Create Guest Collection``
-  #. ``Add Permissions`` 
-  #. Put in their email and ``Add Permission``
-
+#. Search ``CU Boulder Research Computing`` in the file manager
+#. Find the new or existing folder in ``/pl/active/BioKEM/biokem-deposit/globus/``
+#. Click ``Share``
+#. ``Add Guest Collection``
+#. Add a ``Display Name``
+#. ``Create Collection``
+#. ``Add Permissions - Share With``
+#. Make sure ``Path`` is ``/`` and add email (only need read permission)
 #. The users will see data as the transfer script deposits it. 
-#. Once the user has gotten their data:
-
-  #. Revoke access to the endpoint using the ``Permissions`` page
-  #. End the globus enpoint 
-
-      .. code-block:: bash
-
-        globus-stop
 
 
 Transfer to AWS
