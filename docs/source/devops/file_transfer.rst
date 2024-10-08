@@ -19,7 +19,7 @@ also place the newest gain ref into that folder.
             -i    (interim) name of lab to transfer to in interim folder (i.e. luger-lab)
             -p    (pl)      optional flag to push to petalibrary (i.e. luger-lab)
             -a    (amazon)  optional flag to push to AWS bucket (i.e. ex1001)
-            -g    (globus)  optional flag to push to shareable globus collection through BioKEM\'s PetaLibrary (i.e. ex1001)
+            -g    (globus)  optional flag to push to shareable globus collection through the BioKEM PetaLibrary (i.e. ex1001)
             -d    (dropbox) optional flag to push to dropbox (i.e. ex1001)
             -b    (box)     optional flag to push to box (i.e. ex1001)
             -l    (longterm_storage) optional flag to push to /data/longterm_storage (i.e. luger-lab)
